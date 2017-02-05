@@ -23,6 +23,7 @@
     "react-css-modules": "^4.1.0",
     "react-dom": "^15.4.2",
     "sass-loader": "^4.1.1",
+    "sass-resources-loader": "^1.2.0",
     "webpack": "^1.14.0"
   },
   "scripts": {
