@@ -1,0 +1,17 @@
+.profile-wrapper {
+	position: 'absolute';
+	background: '#A5DFF8';
+	z-index: 90;
+	height: '144vh';
+	width: '35vw';
+	top: '39px';
+}
+
+
+.bio {
+	width: '200px';
+	height: '200px';
+	border-radius: '100px';
+	background: 'url(images/bio.png) no-repeat';
+	margin: '50px auto';
+}

@@ -11251,7 +11251,7 @@ exports = module.exports = __webpack_require__(132)();
 
 
 // module
-exports.push([module.i, ".header {\n  position: absolute;\n  overflow: hidden;\n  top: 0;\n  height: 80px;\n  width: 100%;\n  background: #312123;\n  border: 2px solid #222222;\n  box-shadow: 0px -5px 30px #512312; }\n  .header .logo {\n    position: relative;\n    font-family: 'Bungee Hairline', cursive;\n    border-style: inset;\n    border: 4px solid #312123;\n    margin: 0 auto;\n    font-size: 64px;\n    text-align: center;\n    background: transparent; }\n\n.links-container {\n  position: absolute;\n  overflow: hidden;\n  right: 0; }\n  .links-container .links {\n    float: left;\n    font-family: 'Overpass Mono', monospace;\n    font-size: 16px;\n    margin: 20px;\n    color: #512312; }\n", ""]);
+exports.push([module.i, ".header {\n  position: absolute;\n  overflow: hidden;\n  top: 0;\n  height: 64px;\n  width: 100%;\n  background: #222;\n  box-shadow: 0px -5px 30px darkGray; }\n  .header .logo {\n    position: relative;\n    font-family: 'Bungee Hairline', cursive;\n    margin: 0 auto;\n    font-size: 52px;\n    text-align: left;\n    color: white;\n    left: 40px;\n    display: inline-block;\n    cursor: pointer;\n    background: transparent; }\n\n.links-container {\n  position: absolute;\n  overflow: hidden;\n  right: 0; }\n  .links-container .links {\n    float: left;\n    font-family: 'Overpass Mono', monospace;\n    font-size: 16px;\n    margin: 20px;\n    color: white; }\n", ""]);
 
 // exports
 
