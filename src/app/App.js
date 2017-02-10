@@ -3,11 +3,14 @@ import Header from './components/Header.jsx'
 
 
 class App extends Component {
-  render() {
-    return (
-	    <Header />
-          );
-  }
+	constructor(props) {
+	}
+
+	render() {
+		return (
+			<Header />
+		);
+	}
 }
 
 export default App;
