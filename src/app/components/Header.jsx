@@ -3,9 +3,8 @@ import {render} from 'react-dom';
 import styles from './Header.scss';
 import CSSModules from 'react-css-modules';
 
-
 class Header extends React.Component {
-	render () {
+	render (props) {
 		return (
 			<div>
 				<div className="header">

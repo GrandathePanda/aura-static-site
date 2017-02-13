@@ -1,11 +1,24 @@
-.profile-wrapper {
+.profile-container {
 	position: 'absolute';
 	background: '#A5DFF8';
 	z-index: 90;
-	height: '144vh';
 	width: '35vw';
 	top: '39px';
 }
+
+#pic {
+}
+
+.info-container {
+	.info {
+	}
+}
+
+.automation-container {
+	.automation-command {
+	}
+}
+
 
 
 .bio {
