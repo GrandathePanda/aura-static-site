@@ -11695,6 +11695,10 @@ var _Profile = __webpack_require__(354);
 
 var _Profile2 = _interopRequireDefault(_Profile);
 
+var _Automations = __webpack_require__(357);
+
+var _Automations2 = _interopRequireDefault(_Automations);
+
 var _reactCssModules = __webpack_require__(58);
 
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
@@ -11733,7 +11737,7 @@ var Profile = function (_Component) {
 	_createClass(Profile, [{
 		key: 'render',
 		value: function render(props) {
-			return _react2.default.createElement('div', { className: this.props.active ? 'profile-container active' : 'profile-container' }, _react2.default.createElement('div', { className: 'bio' }), _react2.default.createElement('div', { className: 'info-container' }, _react2.default.createElement('p', { id: "name", className: 'info' }, _react2.default.createElement('span', { id: "first_name" }, 'first Name'), ' ', _react2.default.createElement('span', { id: "last_name" }, 'Last Name')), _react2.default.createElement('p', { id: "birthday", className: 'info' }, '06/21/90'), _react2.default.createElement('p', { id: "email", className: 'info' }, 'blah@pibrain.io')), _react2.default.createElement('div', { id: "automation", className: 'automation-container' }, _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' })));
+			return _react2.default.createElement('div', { className: this.props.active ? 'profile-container active' : 'profile-container' }, _react2.default.createElement('div', { className: 'bio' }), _react2.default.createElement('div', { className: 'info-container' }, _react2.default.createElement('p', { id: "name", className: 'info' }, _react2.default.createElement('span', { id: "first_name" }, 'first Name'), ' ', _react2.default.createElement('span', { id: "last_name" }, 'Last Name')), _react2.default.createElement('p', { id: "birthday", className: 'info' }, '06/21/90'), _react2.default.createElement('p', { id: "email", className: 'info' }, 'blah@pibrain.io')), _react2.default.createElement(_Automations2.default, null));
 		}
 	}]);
 
@@ -11779,7 +11783,7 @@ exports = module.exports = __webpack_require__(50)();
 
 
 // module
-exports.push([module.i, ".profile-container {\n  position: absolute;\n  overflow: hidden;\n  background: #A5DFF8;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .profile-container.active {\n    transform: translateX(30vw); }\n\n.info-container {\n  position: relative;\n  margin-bottom: 30px; }\n  .info-container p {\n    text-align: center;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 18px;\n    line-height: 10px; }\n\n.automation-container {\n  width: 92%;\n  height: 350px;\n  margin: 0 auto;\n  padding: 20px;\n  overflow: hidden;\n  background: #D3D3D3; }\n  .automation-container .automation-command {\n    width: 100%;\n    height: 50px;\n    background: white;\n    float: left;\n    margin-bottom: 20px; }\n\n.bio {\n  width: 200px;\n  height: 200px;\n  border-radius: 100px;\n  background: gray;\n  margin: 50px auto; }\n", ""]);
+exports.push([module.i, ".profile-container {\n  position: absolute;\n  overflow: hidden;\n  background: #A5DFF8;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .profile-container.active {\n    transform: translateX(30vw); }\n\n.info-container {\n  position: relative;\n  margin-bottom: 30px; }\n  .info-container p {\n    text-align: center;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 18px;\n    line-height: 10px; }\n\n.bio {\n  width: 200px;\n  height: 200px;\n  border-radius: 100px;\n  background: gray;\n  margin: 50px auto; }\n", ""]);
 
 // exports
 
@@ -28230,6 +28234,124 @@ function _interopRequireDefault(obj) {
 }
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
+
+/***/ },
+/* 357 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () {
+	function defineProperties(target, props) {
+		for (var i = 0; i < props.length; i++) {
+			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+		}
+	}return function (Constructor, protoProps, staticProps) {
+		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	};
+}();
+
+var _react = __webpack_require__(15);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Automations = __webpack_require__(359);
+
+var _Automations2 = _interopRequireDefault(_Automations);
+
+var _reactCssModules = __webpack_require__(58);
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+function _interopRequireDefault(obj) {
+	return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+	if (!(instance instanceof Constructor)) {
+		throw new TypeError("Cannot call a class as a function");
+	}
+}
+
+function _possibleConstructorReturn(self, call) {
+	if (!self) {
+		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+	if (typeof superClass !== "function" && superClass !== null) {
+		throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Automations = function (_Component) {
+	_inherits(Automations, _Component);
+
+	function Automations(props) {
+		_classCallCheck(this, Automations);
+
+		return _possibleConstructorReturn(this, (Automations.__proto__ || Object.getPrototypeOf(Automations)).call(this, props));
+	}
+
+	_createClass(Automations, [{
+		key: 'render',
+		value: function render(props) {
+			return _react2.default.createElement('div', { id: "automation", className: 'automation-container' }, _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' }), _react2.default.createElement('div', { className: 'automation-command' }));
+		}
+	}]);
+
+	return Automations;
+}(_react.Component);
+
+exports.default = Automations;
+
+/***/ },
+/* 358 */
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(50)();
+// imports
+
+
+// module
+exports.push([module.i, ".automation-container {\n  width: 92%;\n  height: 350px;\n  margin: 0 auto;\n  padding: 20px;\n  overflow: hidden;\n  background: #D3D3D3; }\n  .automation-container .automation-command {\n    width: 100%;\n    height: 50px;\n    background: white;\n    float: left;\n    margin-bottom: 20px; }\n", ""]);
+
+// exports
+
+
+/***/ },
+/* 359 */
+/***/ function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(358);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(79)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./Automations.scss", function() {
+			var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./Automations.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }
 /******/ ]);

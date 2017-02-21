@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './Profile.scss';
+import Automations from '../Automations/Automations.jsx';
 import CSSModules from 'react-css-modules';
 
 export default class Profile extends Component {
@@ -16,19 +17,7 @@ export default class Profile extends Component {
 					<p id = {"birthday"} className="info" >06/21/90</p>
 					<p id = {"email"} className="info" >blah@pibrain.io</p>
 				</div>
-				<div id = {"automation"} className="automation-container">
-					<div className="automation-command">
-					</div>
-					<div className="automation-command">
-					</div>
-					<div className="automation-command">
-					</div>
-					<div className="automation-command">
-					</div>
-					<div className="automation-command">
-					</div>
-
-				</div>
+				<Automations />
 			</div>
 		);
 	}
