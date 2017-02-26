@@ -1,0 +1,41 @@
+.automation-command {
+	width: 96%;
+	height: 50px;
+	background: white;
+	float: left;
+	border-radius: 6px;
+	margin: 10px;
+	border: 1px outset #f7f5f3;
+	box-shadow: 2px 2px #c4c2c1;
+
+	.title {
+		width:50%;
+		float:left;
+		margin-left: 15px;
+		font-family: 'PT Serif', serif;
+		font-weight: 700;
+	}
+
+	.controls {
+		float: right;
+		overflow:hidden;
+		padding: 0 5px;
+
+		img {
+
+			width: 20px;
+			height: 20px;
+			float: left;
+			margin: 16px 10px;
+		}
+	}
+}
+
+.expanded-menu {
+
+	.interval {}
+
+	&.hide { display: none; }
+	&.active { display: block }
+}
+
