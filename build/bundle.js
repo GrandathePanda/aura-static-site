@@ -11653,7 +11653,7 @@ var Automation = function (_Component) {
 	_createClass(Automation, [{
 		key: 'render',
 		value: function render(props) {
-			return _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'automation-command' }, _react2.default.createElement('p', { className: 'title' }, this.props.name), _react2.default.createElement('div', { className: 'controls' }, _react2.default.createElement('img', { className: 'edit', src: __webpack_require__(365) }), _react2.default.createElement('img', { className: 'delete', src: __webpack_require__(156) }))), _react2.default.createElement('div', { className: 'expanded-menu hide' }, _react2.default.createElement('p', { className: 'interval' }, this.props.interval), _react2.default.createElement('p', { className: 'interval' }, this.props.execTime)));
+			return _react2.default.createElement('div', null, _react2.default.createElement('div', { className: 'automation-command' }, _react2.default.createElement('p', { className: 'title' }, this.props.name), _react2.default.createElement('div', { className: 'controls' }, _react2.default.createElement('img', { className: 'edit', src: __webpack_require__(157) }), _react2.default.createElement('img', { className: 'delete', src: __webpack_require__(156) }))), _react2.default.createElement('div', { className: 'expanded-menu hide' }, _react2.default.createElement('p', { className: 'interval' }, this.props.interval), _react2.default.createElement('p', { className: 'interval' }, this.props.execTime)));
 		}
 	}]);
 
@@ -12729,7 +12729,12 @@ module.exports = performanceNow;
 module.exports = __webpack_require__.p + "1446e53007901ec97629e536ab4524af.png";
 
 /***/ },
-/* 157 */,
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "171d1ffd253be3ffe749be2675299d2c.png";
+
+/***/ },
 /* 158 */
 /***/ function(module, exports) {
 
@@ -28490,12 +28495,6 @@ function _interopRequireDefault(obj) {
 }
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
-
-/***/ },
-/* 365 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "171d1ffd253be3ffe749be2675299d2c.png";
 
 /***/ }
 /******/ ]);
