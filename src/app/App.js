@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header.jsx';
-import Profile from './components/Profile/Profile.jsx';
+import SidebarMenu from './components/SidebarMenu/SidebarMenu.jsx';
 import styles from './App.scss';
 import CSSModules from 'react-css-modules';
 
@@ -9,15 +9,15 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			profile_active: false
+			sidebar_active: false
 		};
 
-		this.toggleProfile = this.toggleProfile.bind(this);
+		this.toggleSidebar = this.toggleSidebar.bind(this);
 	}
 
-	toggleProfile ( bool ) {
+	toggleSidebar ( bool ) {
 		//manages the state of login for the admin version of the page
-		this.setState( { profile_active: bool } );
+		this.setState( { sidebar_active: bool } );
 	}
 
 	toggleLogin ( bool ) {
@@ -28,10 +28,10 @@ class App extends Component {
 	render(props) {
 		return (
 			<div>
-				<Header profile_active={this.state.profile_active} toggleProfile={this.toggleProfile} />
+				<Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
 				<div className= 'app-container'>
-					<Profile active={this.state.profile_active} />
-					<div className={this.state.profile_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
+					<SidebarMenu active={this.state.sidebar_active} />
+					<div className={this.state.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
 				</div>
 			</div>
 		);

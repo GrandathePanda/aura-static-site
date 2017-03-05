@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './Login.scss';
-import InputField from './InputField/InputField.jsx';
+import InputField from '../InputField/InputField.jsx';
 import CSSModules from 'react-css-modules';
 
 export default class Login extends Component {
@@ -10,13 +10,13 @@ export default class Login extends Component {
 	}
 	handleSubmit(e) {
 		e.preventDefault();
-		var contributor = this.state.contributor.trim();
-		var amount = this.state.amount;
-		var comment = this.state.comment.trim();
-		if (!contributor || !amount) {
+		var email = this.state.email.trim();
+		var password = this.state.amount;
+		if (!email || !password) {
 			return;
 		}
-    		this.props.onDonationSubmit({contributor: contributor, amount: amount, comment: comment});
+
+    		this.props.onSubmit({email: email, password: password });
 		this.setState({
 			email: '',
 			password: ''
@@ -43,37 +43,39 @@ export default class Login extends Component {
 
 	render(props) {
 		return (
-			<form>
-				<InputField
-					type={"email"}
-					className={"input email"}
-					value={this.state.email}
-					uniqueName="email"
-					text="Email Address"
-					textArea={false}
-					required={true}
-					minCharacters={6}
-					validate={this.validateEmail}
-					onChange={this.setValue.bind(this, 'email')}
-					errorMessage="Sorry, the email you've entered is invalid"
-					emptyMessage="Email is required field" />
-				<br><br>
-				<InputField
-					type={"email"}
-					className={"input email"}
-					value={this.state.email}
-					uniqueName="email"
-					text="Email Address"
-					textArea={false}
-					required={true}
-					minCharacters={6}
-					validate={this.validateEmail}
-					onChange={this.setValue.bind(this, 'email')}
-					errorMessage="Sorry, the email you've entered is invalid"
-					emptyMessage="Email is required field" />
+			<div id="login-form">
+				<form>
+					<InputField
+						type={"email"}
+						className={"input email"}
+						value={this.state.email}
+						uniqueName="email"
+						text="Email Address"
+						textArea={false}
+						required={true}
+						minCharacters={6}
+						validate={this.validateEmail}
+						onChange={this.setValue.bind(this, 'email')}
+						errorMessage="Sorry, the email you've entered is invalid"
+						emptyMessage="Email is required field" />
+					<br></br>
+					<InputField
+						type={"email"}
+						className={"input email"}
+						value={this.state.email}
+						uniqueName="email"
+						text="Email Address"
+						textArea={false}
+						required={true}
+						minCharacters={6}
+						validate={this.validateEmail}
+						onChange={this.setValue.bind(this, 'email')}
+						errorMessage="Sorry, the email you've entered is invalid"
+						emptyMessage="Email is required field" />
 
-				<input className="submit-btn" type="submit" value="submit" />
-			</form>
+					<input className="submit-btn" type="submit" value="submit" />
+				</form>
+			</div>
 		);
 	}
 }

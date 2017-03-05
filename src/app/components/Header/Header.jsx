@@ -12,7 +12,7 @@ class Header extends React.Component {
 					<p className="links">About</p>
 					<p className="links">FAQ</p>
 					<p className="links">Support</p>
-					<p className="links" onClick={ this.props.profile_active ? this.props.toggleProfile.bind(null, false) : this.props.toggleProfile.bind(null, true) }>profile_img</p>
+					<p className="links" onClick={ this.props.sidebar_active ? this.props.toggleSidebar.bind(null, false) : this.props.toggleSidebar.bind(null, true) }>profile_img</p>
 				</div>
 			</div>
 
