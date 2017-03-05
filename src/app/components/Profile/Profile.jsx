@@ -10,7 +10,7 @@ export default class Profile extends Component {
 
 	render(props) {
 		return (
-			<div className = { this.props.active ? 'profile-container active' : 'profile-container' } >
+			<div className ="profile-container">
 				<div className ="bio"></div>
 				<div className="info-container">
 					<p id = {"name"} className="info"><span id = {"first_name"}>first Name</span> <span id={"last_name"}>Last Name</span></p>

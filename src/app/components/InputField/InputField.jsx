@@ -66,29 +66,34 @@ export default class InputField extends Component {
 	}
 
 	render(props) {
+		let field = null;
+
+		if (this.props.textArea) {
+			field = <div className={this.props.className} >
+				<textarea id="input-field"
+					type={this.props.type}
+					className={"input input-" + this.props.className}
+					placeholder={this.props.text}
+					value={this.props.value}
+					onChange={this.handleChanges}
+					onBlur={this.handleBlur} />
+			</div>
+		}
+		else {
+			field = <div className={this.props.className} >
+				<input id="input-field"
+					type={this.props.type}
+					className={"input input-" + this.props.className}
+					placeholder={this.props.text}
+					value={this.props.value}
+					onChange={this.handleChanges}
+					onBlur={this.handleBlur} />
+			</div>
+		}
 		return (
-			if (this.props.textArea) {
-				<div className={this.props.className} >
-					<textarea id="input-field"
-						type={this.props.type}
-						className={"input input-" + this.props.className}
-						placeholder={this.props.text}
-						value={this.props.value}
-						onChange={this.handleChanges}
-						onBlur={this.handleBlur} />
-				</div>
-			}
-			else {
-				<div className={this.props.className} >
-					<input id="input-field"
-						type={this.props.type}
-						className={"input input-" + this.props.className}
-						placeholder={this.props.text}
-						value={this.props.value}
-						onChange={this.handleChanges}
-						onBlur={this.handleBlur} />
-				</div>
-			}
+			<div>
+				{field}
+			</div>
 		);
 	}
 }
