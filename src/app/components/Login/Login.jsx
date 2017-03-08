@@ -33,7 +33,7 @@ export default class Login extends Component {
 		return true;
 	}
 	commonValidate() {
-		return true
+		return true;
 	}
   	setValue(field, event) {
 		var object = {};
@@ -42,8 +42,8 @@ export default class Login extends Component {
 	}
 
 	render(props) {
-		return (
-			<div id="login-form">
+    return (
+			<div id="login-form" className={this.props.active ? "form-container active" : "form-container" }>
 				<form>
 					<InputField
 						type={"email"}

@@ -9,20 +9,22 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			sidebar_active: false
+      sidebar_active: false,
+      loggedIn: false
 		};
 
 		this.toggleSidebar = this.toggleSidebar.bind(this);
+		this.handleLogin = this.handleLogin.bind(this);
 	}
 
 	toggleSidebar ( bool ) {
-		//manages the state of login for the admin version of the page
+		//manages the state of the side menu expanding
 		this.setState( { sidebar_active: bool } );
 	}
 
-	toggleLogin ( bool ) {
-		//manages the state of login for the admin version of the page
-		//this.setState( { loggedIn: bool } );
+	handleLogin () {
+		//manages the state of login validation from the server should go here
+		this.setState( { loggedIn: true } );
 	}
 
 	render(props) {
@@ -30,7 +32,7 @@ class App extends Component {
 			<div>
 				<Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
 				<div className= 'app-container'>
-					<SidebarMenu active={this.state.sidebar_active} />
+					<SidebarMenu handleLogin={this.handleLogin} active={this.state.sidebar_active} />
 					<div className={this.state.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
 				</div>
 			</div>

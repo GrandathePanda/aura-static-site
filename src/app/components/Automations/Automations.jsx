@@ -27,8 +27,10 @@ export default class Automations extends Component {
 			</div>
 		);
 
-		return (
-			<AutomationsList automations={automation_data} />
+    return (
+      <div>
+        <AutomationsList automations={automation_data} />
+      </div>
 		);
 	}
 }
