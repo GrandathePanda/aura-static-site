@@ -11981,7 +11981,7 @@ var Header = function (_React$Component) {
 	_createClass(Header, [{
 		key: 'render',
 		value: function render(props) {
-			return _react2.default.createElement('div', { className: 'header' }, _react2.default.createElement('p', { className: 'logo' }, 'Aura'), _react2.default.createElement('div', { className: 'links-container' }, _react2.default.createElement('p', { className: 'links' }, 'About'), _react2.default.createElement('p', { className: 'links' }, 'FAQ'), _react2.default.createElement('p', { className: 'links' }, 'Support'), _react2.default.createElement('p', { className: 'links', onClick: this.props.sidebar_active ? this.props.toggleSidebar.bind(null, false) : this.props.toggleSidebar.bind(null, true) }, 'profile_img')));
+			return _react2.default.createElement('div', { className: 'header' }, _react2.default.createElement('p', { className: 'logo' }, 'Aura'), _react2.default.createElement('div', { className: 'links-container' }, _react2.default.createElement('p', { className: 'links' }, 'A B O U T'), _react2.default.createElement('p', { className: 'links' }, 'F A Q'), _react2.default.createElement('p', { className: 'links' }, 'S U P P O R T'), _react2.default.createElement('p', { className: 'links', onClick: this.props.sidebar_active ? this.props.toggleSidebar.bind(null, false) : this.props.toggleSidebar.bind(null, true) }, 'profile_img')));
 		}
 	}]);
 
@@ -12000,17 +12000,17 @@ exports.default = (0, _reactCssModules2.default)(Header, _Header2.default);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () {
-	function defineProperties(target, props) {
-		for (var i = 0; i < props.length; i++) {
-			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-		}
-	}return function (Constructor, protoProps, staticProps) {
-		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-	};
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
 }();
 
 var _react = __webpack_require__(7);
@@ -12030,111 +12030,111 @@ var _reactCssModules = __webpack_require__(16);
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
 function _interopRequireDefault(obj) {
-	return obj && obj.__esModule ? obj : { default: obj };
+  return obj && obj.__esModule ? obj : { default: obj };
 }
 
 function _classCallCheck(instance, Constructor) {
-	if (!(instance instanceof Constructor)) {
-		throw new TypeError("Cannot call a class as a function");
-	}
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
 }
 
 function _possibleConstructorReturn(self, call) {
-	if (!self) {
-		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-	}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 }
 
 function _inherits(subClass, superClass) {
-	if (typeof superClass !== "function" && superClass !== null) {
-		throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
 var Login = function (_Component) {
-	_inherits(Login, _Component);
+  _inherits(Login, _Component);
 
-	function Login(props) {
-		_classCallCheck(this, Login);
+  function Login(props) {
+    _classCallCheck(this, Login);
 
-		var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
 
-		_this.state = { email: "", password: "" };
-		return _this;
-	}
+    _this.state = { email: "", password: "" };
+    return _this;
+  }
 
-	_createClass(Login, [{
-		key: 'handleSubmit',
-		value: function handleSubmit(e) {
-			e.preventDefault();
-			var email = this.state.email.trim();
-			var password = this.state.amount;
-			if (!email || !password) {
-				return;
-			}
+  _createClass(Login, [{
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var email = this.state.email.trim();
+      var password = this.state.amount;
+      if (!email || !password) {
+        return;
+      }
 
-			this.props.onSubmit({ email: email, password: password });
-			this.setState({
-				email: '',
-				password: ''
-			});
-		}
-	}, {
-		key: 'validateEmail',
-		value: function validateEmail(value) {
-			//email regex
-			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-			return re.test(value);
-		}
-	}, {
-		key: 'validatePassword',
-		value: function validatePassword(value) {
-			return true;
-		}
-	}, {
-		key: 'commonValidate',
-		value: function commonValidate() {
-			return true;
-		}
-	}, {
-		key: 'setValue',
-		value: function setValue(field, event) {
-			var object = {};
-			object[field] = event.target.value;
-			this.setState(object);
-		}
-	}, {
-		key: 'render',
-		value: function render(props) {
-			return _react2.default.createElement('div', { id: 'login-form', className: this.props.active ? "form-container active" : "form-container" }, _react2.default.createElement('form', null, _react2.default.createElement(_InputField2.default, {
-				type: "email",
-				className: "input email",
-				value: this.state.email,
-				uniqueName: 'email',
-				text: 'Email Address',
-				textArea: false,
-				required: true,
-				minCharacters: 6,
-				validate: this.validateEmail,
-				onChange: this.setValue.bind(this, 'email'),
-				errorMessage: 'Sorry, the email you\'ve entered is invalid',
-				emptyMessage: 'Email is required field' }), _react2.default.createElement('br', null), _react2.default.createElement(_InputField2.default, {
-				type: "email",
-				className: "input email",
-				value: this.state.email,
-				uniqueName: 'email',
-				text: 'Email Address',
-				textArea: false,
-				required: true,
-				minCharacters: 6,
-				validate: this.validateEmail,
-				onChange: this.setValue.bind(this, 'email'),
-				errorMessage: 'Sorry, the email you\'ve entered is invalid',
-				emptyMessage: 'Email is required field' }), _react2.default.createElement('input', { className: 'submit-btn', type: 'submit', value: 'submit' })));
-		}
-	}]);
+      this.props.onSubmit({ email: email, password: password });
+      this.setState({
+        email: '',
+        password: ''
+      });
+    }
+  }, {
+    key: 'validateEmail',
+    value: function validateEmail(value) {
+      //email regex
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(value);
+    }
+  }, {
+    key: 'validatePassword',
+    value: function validatePassword(value) {
+      return true;
+    }
+  }, {
+    key: 'commonValidate',
+    value: function commonValidate() {
+      return true;
+    }
+  }, {
+    key: 'setValue',
+    value: function setValue(field, event) {
+      var object = {};
+      object[field] = event.target.value;
+      this.setState(object);
+    }
+  }, {
+    key: 'render',
+    value: function render(props) {
+      return _react2.default.createElement('div', { id: 'login-form', className: this.props.active ? "form-container active" : "form-container" }, _react2.default.createElement('p', { className: 'login-header' }, 'Login'), _react2.default.createElement('form', null, _react2.default.createElement(_InputField2.default, {
+        type: "email",
+        className: "input email",
+        value: this.state.email,
+        uniqueName: 'email',
+        text: 'Email Address',
+        textArea: false,
+        required: true,
+        minCharacters: 6,
+        validate: this.validateEmail,
+        onChange: this.setValue.bind(this, 'email'),
+        errorMessage: 'Sorry, the email you\'ve entered is invalid',
+        emptyMessage: 'Email is required field' }), _react2.default.createElement('br', null), _react2.default.createElement(_InputField2.default, {
+        type: "password",
+        className: "input password",
+        value: this.state.email,
+        uniqueName: 'email',
+        text: 'Password',
+        textArea: false,
+        required: true,
+        minCharacters: 6,
+        validate: this.validatePassword,
+        onChange: this.setValue.bind(this, 'password'),
+        errorMessage: 'Sorry, your email/password combinations is not correct',
+        emptyMessage: 'Password is required field' }), _react2.default.createElement('input', { className: 'submit-btn', type: 'submit', value: 'submit' }), _react2.default.createElement('p', { className: 'forgot-password' }, 'Forgot your passsword?'), _react2.default.createElement('p', { className: 'signup-prompt' }, 'Don\'t have an account? Click ', _react2.default.createElement('span', { className: 'link' }, 'here'), ' to signup! ')));
+    }
+  }]);
 
-	return Login;
+  return Login;
 }(_react.Component);
 
 exports.default = Login;
@@ -12421,7 +12421,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".app-container {\n  position: relative;\n  top: 64px;\n  background: wheat;\n  width: 100%;\n  height: 100vh; }\n\n.aura-container {\n  position: relative;\n  background: purple;\n  width: 100%;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99);\n  height: 100vh; }\n  .aura-container.pushed {\n    transform: translateX(30vw); }\n", ""]);
+exports.push([module.i, ".app-container {\n  position: relative;\n  top: 64px;\n  background: wheat;\n  width: 100%;\n  height: 100vh; }\n\n.aura-container {\n  position: relative;\n  background: #d8d6e2;\n  width: 100%;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99);\n  height: 100vh; }\n  .aura-container.pushed {\n    transform: translateX(30vw); }\n", ""]);
 
 // exports
 
@@ -12463,7 +12463,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".header {\n  position: absolute;\n  overflow: hidden;\n  top: 0;\n  z-index: 1000;\n  height: 64px;\n  width: 100%;\n  background: #222;\n  box-shadow: -9px -15px 12px 14px black; }\n  .header .logo {\n    position: relative;\n    font-family: 'Bungee Hairline', cursive;\n    margin: 0 auto;\n    font-size: 52px;\n    text-align: left;\n    color: white;\n    left: 40px;\n    display: inline-block;\n    cursor: pointer;\n    background: transparent; }\n\n.links-container {\n  position: relative;\n  overflow: hidden;\n  float: right; }\n  .links-container .links {\n    float: left;\n    font-family: 'Overpass Mono', monospace;\n    font-size: 16px;\n    margin: 20px;\n    color: white;\n    cursor: pointer; }\n", ""]);
+exports.push([module.i, ".header {\n  position: absolute;\n  overflow: hidden;\n  top: 0;\n  z-index: 1000;\n  height: 64px;\n  width: 100%;\n  background: #222;\n  box-shadow: -9px -15px 12px 14px black; }\n  .header .logo {\n    position: relative;\n    font-family: 'Bungee Hairline', cursive;\n    margin: 0 auto;\n    font-size: 52px;\n    text-align: left;\n    color: white;\n    left: 40px;\n    display: inline-block;\n    cursor: pointer;\n    background: transparent; }\n\n.links-container {\n  position: relative;\n  overflow: hidden;\n  float: right; }\n  .links-container .links {\n    float: left;\n    font-family: 'Raleway', sans-serif;\n    font-size: 16px;\n    margin: 20px;\n    color: white;\n    cursor: pointer; }\n", ""]);
 
 // exports
 
@@ -12491,7 +12491,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "#login-form .form-container {\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  display: none; }\n  #login-form .form-container.active {\n    display: block; }\n", ""]);
+exports.push([module.i, "#login-form {\n  position: absolute;\n  top: 35%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 60%; }\n  #login-form .form-container {\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: none; }\n    #login-form .form-container.active {\n      display: block; }\n", ""]);
 
 // exports
 
