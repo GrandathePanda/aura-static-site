@@ -44,7 +44,9 @@ export default class Login extends Component {
   render(props) {
     return (
       <div id="login-form" className={this.props.active ? "form-container active" : "form-container" }>
-        <p className="login-header">Login</p>
+			<div className="header-container">
+        <p className="login-header"><span className="login">Login</span> / <span className="signup">Signup</span></p>
+			</div>
         <form>
           <InputField
           type={"email"}
@@ -73,9 +75,8 @@ export default class Login extends Component {
           onChange={this.setValue.bind(this, 'password')}
           errorMessage="Sorry, your email/password combinations is not correct"
           emptyMessage="Password is required field" />
-          <input className="submit-btn" type="submit" value="submit" />
-          <p className="forgot-password">Forgot your passsword?</p>
-          <p className="signup-prompt">Don't have an account? Click <span className="link">here</span> to signup! </p>
+          <p className="forgot-password">Forgot your passsword? Click <span className="link">here</span>!</p>
+          <input className="submit-btn" type="submit" value="Submit" />
         </form>
       </div>
       );

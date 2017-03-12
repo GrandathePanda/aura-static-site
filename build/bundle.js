@@ -12106,7 +12106,7 @@ var Login = function (_Component) {
   }, {
     key: 'render',
     value: function render(props) {
-      return _react2.default.createElement('div', { id: 'login-form', className: this.props.active ? "form-container active" : "form-container" }, _react2.default.createElement('p', { className: 'login-header' }, 'Login'), _react2.default.createElement('form', null, _react2.default.createElement(_InputField2.default, {
+      return _react2.default.createElement('div', { id: 'login-form', className: this.props.active ? "form-container active" : "form-container" }, _react2.default.createElement('div', { className: 'header-container' }, _react2.default.createElement('p', { className: 'login-header' }, _react2.default.createElement('span', { className: 'login' }, 'Login'), ' / ', _react2.default.createElement('span', { className: 'signup' }, 'Signup'))), _react2.default.createElement('form', null, _react2.default.createElement(_InputField2.default, {
         type: "email",
         className: "input email",
         value: this.state.email,
@@ -12130,7 +12130,7 @@ var Login = function (_Component) {
         validate: this.validatePassword,
         onChange: this.setValue.bind(this, 'password'),
         errorMessage: 'Sorry, your email/password combinations is not correct',
-        emptyMessage: 'Password is required field' }), _react2.default.createElement('input', { className: 'submit-btn', type: 'submit', value: 'submit' }), _react2.default.createElement('p', { className: 'forgot-password' }, 'Forgot your passsword?'), _react2.default.createElement('p', { className: 'signup-prompt' }, 'Don\'t have an account? Click ', _react2.default.createElement('span', { className: 'link' }, 'here'), ' to signup! ')));
+        emptyMessage: 'Password is required field' }), _react2.default.createElement('p', { className: 'forgot-password' }, 'Forgot your passsword? Click ', _react2.default.createElement('span', { className: 'link' }, 'here'), '!'), _react2.default.createElement('input', { className: 'submit-btn', type: 'submit', value: 'Submit' })));
     }
   }]);
 
@@ -12463,7 +12463,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".header {\n  position: absolute;\n  overflow: hidden;\n  top: 0;\n  z-index: 1000;\n  height: 64px;\n  width: 100%;\n  background: #222;\n  box-shadow: -9px -15px 12px 14px black; }\n  .header .logo {\n    position: relative;\n    font-family: 'Bungee Hairline', cursive;\n    margin: 0 auto;\n    font-size: 52px;\n    text-align: left;\n    color: white;\n    left: 40px;\n    display: inline-block;\n    cursor: pointer;\n    background: transparent; }\n\n.links-container {\n  position: relative;\n  overflow: hidden;\n  float: right; }\n  .links-container .links {\n    float: left;\n    font-family: 'Raleway', sans-serif;\n    font-size: 16px;\n    margin: 20px;\n    color: white;\n    cursor: pointer; }\n", ""]);
+exports.push([module.i, ".header {\n  position: absolute;\n  overflow: hidden;\n  top: 0;\n  z-index: 1000;\n  height: 64px;\n  width: 100%;\n  background: #222;\n  box-shadow: -9px -15px 12px 14px black; }\n  .header .logo {\n    position: relative;\n    font-family: 'Bungee Hairline', cursive;\n    margin: 0 auto;\n    font-size: 52px;\n    text-align: left;\n    color: white;\n    left: 40px;\n    display: inline-block;\n    cursor: pointer;\n    background: transparent; }\n\n.links-container {\n  position: relative;\n  overflow: hidden;\n  float: right; }\n  .links-container .links {\n    float: left;\n    font: italic 16px 'Raleway', sans-serif;\n    margin: 20px;\n    color: white;\n    cursor: pointer; }\n", ""]);
 
 // exports
 
@@ -12491,7 +12491,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "#login-form {\n  position: absolute;\n  top: 35%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 60%; }\n  #login-form .form-container {\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: none; }\n    #login-form .form-container.active {\n      display: block; }\n", ""]);
+exports.push([module.i, "#login-form {\n  position: relative;\n  top: 18%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #login-form .forgot-password {\n    font-family: \"PT Mono\", monospace;\n    font-size: 12px;\n    margin: 20px 40px;\n    color: #222; }\n    #login-form .forgot-password span {\n      border-bottom: 1px solid #222;\n      padding-bottom: 2px;\n      cursor: pointer; }\n  #login-form input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 41px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #login-form input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none; }\n  #login-form input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #login-form input[type=email]:focus, #login-form input[type=password]:focus {\n    border: 3px solid #555; }\n  #login-form .header-container {\n    width: 100%;\n    background: #35ade0;\n    height: 8%;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    #login-form .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 25%); }\n      #login-form .header-container .login-header span {\n        border-bottom: 2px solid white;\n        padding-bottom: 4px;\n        cursor: pointer; }\n  #login-form .form-container {\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: none; }\n    #login-form .form-container.active {\n      display: block; }\n", ""]);
 
 // exports
 
@@ -12519,7 +12519,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: #A5DFF8;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n", ""]);
+exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n", ""]);
 
 // exports
 
