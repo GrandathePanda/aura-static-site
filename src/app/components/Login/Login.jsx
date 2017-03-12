@@ -43,11 +43,8 @@ export default class Login extends Component {
 
   render(props) {
     return (
-      <div id="login-form" className={this.props.active ? "form-container active" : "form-container" }>
-			<div className="header-container">
-        <p className="login-header"><span className="login">Login</span> / <span className="signup">Signup</span></p>
-			</div>
-        <form>
+      <div id="login" className={this.props.active ? "form-container active" : "form-container" }>
+        <form className="login-form">
           <InputField
           type={"email"}
           className={"input email"}
@@ -77,7 +74,7 @@ export default class Login extends Component {
           emptyMessage="Password is required field" />
           <p className="forgot-password">Forgot your passsword? Click <span className="link">here</span>!</p>
           <input className="submit-btn" type="submit" value="Submit" />
-        </form>
+      </form>
       </div>
       );
     }

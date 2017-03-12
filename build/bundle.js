@@ -12106,7 +12106,7 @@ var Login = function (_Component) {
   }, {
     key: 'render',
     value: function render(props) {
-      return _react2.default.createElement('div', { id: 'login-form', className: this.props.active ? "form-container active" : "form-container" }, _react2.default.createElement('div', { className: 'header-container' }, _react2.default.createElement('p', { className: 'login-header' }, _react2.default.createElement('span', { className: 'login' }, 'Login'), ' / ', _react2.default.createElement('span', { className: 'signup' }, 'Signup'))), _react2.default.createElement('form', null, _react2.default.createElement(_InputField2.default, {
+      return _react2.default.createElement('div', { id: 'login', className: this.props.active ? "form-container active" : "form-container" }, _react2.default.createElement('form', { className: 'login-form' }, _react2.default.createElement(_InputField2.default, {
         type: "email",
         className: "input email",
         value: this.state.email,
@@ -12231,17 +12231,17 @@ exports.default = Profile;
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () {
-	function defineProperties(target, props) {
-		for (var i = 0; i < props.length; i++) {
-			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-		}
-	}return function (Constructor, protoProps, staticProps) {
-		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-	};
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
 }();
 
 var _react = __webpack_require__(7);
@@ -12269,60 +12269,60 @@ var _reactCssModules = __webpack_require__(16);
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
 function _interopRequireDefault(obj) {
-	return obj && obj.__esModule ? obj : { default: obj };
+  return obj && obj.__esModule ? obj : { default: obj };
 }
 
 function _classCallCheck(instance, Constructor) {
-	if (!(instance instanceof Constructor)) {
-		throw new TypeError("Cannot call a class as a function");
-	}
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
 }
 
 function _possibleConstructorReturn(self, call) {
-	if (!self) {
-		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-	}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 }
 
 function _inherits(subClass, superClass) {
-	if (typeof superClass !== "function" && superClass !== null) {
-		throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
 var SidebarMenu = function (_Component) {
-	_inherits(SidebarMenu, _Component);
+  _inherits(SidebarMenu, _Component);
 
-	function SidebarMenu(props) {
-		_classCallCheck(this, SidebarMenu);
+  function SidebarMenu(props) {
+    _classCallCheck(this, SidebarMenu);
 
-		var _this = _possibleConstructorReturn(this, (SidebarMenu.__proto__ || Object.getPrototypeOf(SidebarMenu)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (SidebarMenu.__proto__ || Object.getPrototypeOf(SidebarMenu)).call(this, props));
 
-		_this.state = {
-			profile_active: false,
-			signup_clicked: false
-		};
+    _this.state = {
+      profile_active: false,
+      signup_clicked: false
+    };
 
-		_this.displayProfile = _this.displayProfile.bind(_this);
-		return _this;
-	}
+    _this.displayProfile = _this.displayProfile.bind(_this);
+    return _this;
+  }
 
-	_createClass(SidebarMenu, [{
-		key: 'displayProfile',
-		value: function displayProfile() {
-			//manages the state of login for the profile
-			if (this.props.loggedIn) {
-				this.setState({ profile_active: true });
-			}
-		}
-	}, {
-		key: 'render',
-		value: function render(props) {
-			return _react2.default.createElement('div', { className: this.props.active ? 'side-container active' : 'side-container' }, _react2.default.createElement(_Profile2.default, { active: this.state.profile_active }), _react2.default.createElement(_Login2.default, { active: !this.state.profile_active }), _react2.default.createElement(_SignUp2.default, { active: this.state.signup_clicked }));
-		}
-	}]);
+  _createClass(SidebarMenu, [{
+    key: 'displayProfile',
+    value: function displayProfile() {
+      //manages the state of login for the profile
+      if (this.props.loggedIn) {
+        this.setState({ profile_active: true });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render(props) {
+      return _react2.default.createElement('div', { className: this.props.active ? 'side-container active' : 'side-container' }, _react2.default.createElement(_Profile2.default, { active: this.state.profile_active }), _react2.default.createElement('div', { className: 'header-container' }, _react2.default.createElement('p', { className: 'login-header' }, _react2.default.createElement('span', { className: 'login active' }, 'Login'), ' / ', _react2.default.createElement('span', { className: 'signup' }, 'Signup'))), _react2.default.createElement(_Login2.default, { active: !this.state.profile_active }), _react2.default.createElement(_SignUp2.default, { active: this.state.signup_clicked }), _react2.default.createElement('p', { className: 'footer-links' }, _react2.default.createElement('span', { className: 'link' }, 'Privacy'), ' / ', _react2.default.createElement('span', { className: 'link' }, 'Terms'), ' / piBrain \xA9 ', new Date().getFullYear(), ' '));
+    }
+  }]);
 
-	return SidebarMenu;
+  return SidebarMenu;
 }(_react.Component);
 
 exports.default = SidebarMenu;
@@ -12421,7 +12421,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".app-container {\n  position: relative;\n  top: 64px;\n  background: wheat;\n  width: 100%;\n  height: 100vh; }\n\n.aura-container {\n  position: relative;\n  background: #d8d6e2;\n  width: 100%;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99);\n  height: 100vh; }\n  .aura-container.pushed {\n    transform: translateX(30vw); }\n", ""]);
+exports.push([module.i, ".app-container {\n  position: relative;\n  top: 48px;\n  background: wheat;\n  width: 100%;\n  height: 100vh; }\n\n.aura-container {\n  position: relative;\n  background: #d8d6e2;\n  width: 100%;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99);\n  height: 100vh; }\n  .aura-container.pushed {\n    transform: translateX(30vw); }\n", ""]);
 
 // exports
 
@@ -12491,7 +12491,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "#login-form {\n  position: relative;\n  top: 18%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #login-form .forgot-password {\n    font-family: \"PT Mono\", monospace;\n    font-size: 12px;\n    margin: 20px 40px;\n    color: #222; }\n    #login-form .forgot-password span {\n      border-bottom: 1px solid #222;\n      padding-bottom: 2px;\n      cursor: pointer; }\n  #login-form input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 41px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #login-form input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none; }\n  #login-form input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #login-form input[type=email]:focus, #login-form input[type=password]:focus {\n    border: 3px solid #555; }\n  #login-form .header-container {\n    width: 100%;\n    background: #35ade0;\n    height: 8%;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    #login-form .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 25%); }\n      #login-form .header-container .login-header span {\n        border-bottom: 2px solid white;\n        padding-bottom: 4px;\n        cursor: pointer; }\n  #login-form .form-container {\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: none; }\n    #login-form .form-container.active {\n      display: block; }\n", ""]);
+exports.push([module.i, "#login {\n  position: relative;\n  top: 15%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #login .forgot-password {\n    font-family: \"PT Mono\", monospace;\n    font-size: 12px;\n    margin: 20px 40px;\n    color: #222; }\n    #login .forgot-password span {\n      border-bottom: 1px solid #222;\n      padding-bottom: 2px;\n      cursor: pointer; }\n  #login input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 41px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #login input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none;\n    cursor: pointer; }\n  #login input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #login input[type=email]:focus, #login input[type=password]:focus {\n    border: 3px solid #555; }\n  #login .form-container {\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: none; }\n    #login .form-container.active {\n      display: block; }\n", ""]);
 
 // exports
 
@@ -12519,7 +12519,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n", ""]);
+exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n  .side-container .header-container {\n    width: 100%;\n    background: #98c5ec;\n    height: 8%;\n    position: relative;\n    top: -8px;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    .side-container .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 25%); }\n      .side-container .header-container .login-header span {\n        padding-bottom: 4px;\n        cursor: pointer;\n        border: 2px solid rgba(255, 225, 255, 0);\n        -webkit-transition: border 300ms ease;\n        -moz-transition: border 300ms ease;\n        -ms-transition: border 300ms ease;\n        -o-transition: border 300ms ease;\n        transition: border 300ms ease; }\n      .side-container .header-container .login-header span:hover {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .login.active {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .signup.active {\n        border-bottom: 2px solid white; }\n  .side-container .footer-links {\n    text-align: center;\n    font: 12px 'PT Mono', monpspace;\n    position: relative;\n    top: 45%; }\n    .side-container .footer-links span {\n      cursor: pointer; }\n", ""]);
 
 // exports
 
