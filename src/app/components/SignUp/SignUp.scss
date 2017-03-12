@@ -1,2 +1,43 @@
-#sign-up {
+#signup {
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+
+  input {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 50px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 3px solid #d8d6e2;
+    -webkit-transition: 0.5s;
+    font: 12px 'PT Mono', monospace;
+    transition: 0.5s;
+    outline: none;
+  }
+
+  input[type=submit] {
+    background:rgba(220, 220, 220, 0.27);
+    border: none;
+    cursor:pointer;
+  }
+
+  input[type=submit]:hover {
+    background: #222;
+    color: white;
+  }
+
+  input[type=email]:focus, input[type=password]:focus, input[type=text]:focus {
+    border: 3px solid #555;
+  }
 }
+.signup-container{
+    overflow: hidden;
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+

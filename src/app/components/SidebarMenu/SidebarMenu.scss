@@ -75,6 +75,10 @@ $new-blue: #98c5ec;
     position: relative;
     top: 45%;
 
+    &.adjust {
+      top: 26.1%;
+    }
+
     span {
       cursor:pointer;
     }

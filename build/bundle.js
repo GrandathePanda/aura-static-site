@@ -12106,7 +12106,7 @@ var Login = function (_Component) {
   }, {
     key: 'render',
     value: function render(props) {
-      return _react2.default.createElement('div', { id: 'login', className: this.props.active ? "form-container active" : "form-container" }, _react2.default.createElement('form', { className: 'login-form' }, _react2.default.createElement(_InputField2.default, {
+      return _react2.default.createElement('div', { id: 'login', className: this.props.active ? "login-container active" : "login-container" }, _react2.default.createElement('form', { className: 'login-form' }, _react2.default.createElement(_InputField2.default, {
         type: "email",
         className: "input email",
         value: this.state.email,
@@ -12300,10 +12300,11 @@ var SidebarMenu = function (_Component) {
 
     _this.state = {
       profile_active: false,
-      signup_clicked: false
+      toggleLogin: true
     };
 
     _this.displayProfile = _this.displayProfile.bind(_this);
+    _this.toggleLogin = _this.toggleLogin.bind(_this);
     return _this;
   }
 
@@ -12316,9 +12317,26 @@ var SidebarMenu = function (_Component) {
       }
     }
   }, {
+    key: 'toggleLogin',
+    value: function toggleLogin(bool) {
+      //when login is false, signup is displayed
+      if (this.state.profile_active) {
+        return;
+      } else {
+        console.log(bool);
+        this.setState({ toggleLogin: bool });
+      }
+    }
+  }, {
     key: 'render',
     value: function render(props) {
-      return _react2.default.createElement('div', { className: this.props.active ? 'side-container active' : 'side-container' }, _react2.default.createElement(_Profile2.default, { active: this.state.profile_active }), _react2.default.createElement('div', { className: 'header-container' }, _react2.default.createElement('p', { className: 'login-header' }, _react2.default.createElement('span', { className: 'login active' }, 'Login'), ' / ', _react2.default.createElement('span', { className: 'signup' }, 'Signup'))), _react2.default.createElement(_Login2.default, { active: !this.state.profile_active }), _react2.default.createElement(_SignUp2.default, { active: this.state.signup_clicked }), _react2.default.createElement('p', { className: 'footer-links' }, _react2.default.createElement('span', { className: 'link' }, 'Privacy'), ' / ', _react2.default.createElement('span', { className: 'link' }, 'Terms'), ' / piBrain \xA9 ', new Date().getFullYear(), ' '));
+      var _this2 = this;
+
+      return _react2.default.createElement('div', { className: this.props.active ? 'side-container active' : 'side-container' }, _react2.default.createElement(_Profile2.default, { active: this.state.profile_active }), _react2.default.createElement('div', { className: 'header-container' }, _react2.default.createElement('p', { className: 'login-header' }, _react2.default.createElement('span', { className: this.state.toggleLogin ? "login active" : "login", onClick: function onClick() {
+          return _this2.toggleLogin(true);
+        } }, 'Login'), ' /', _react2.default.createElement('span', { className: this.state.toggleLogin ? "signup" : "signup active", onClick: function onClick() {
+          return _this2.toggleLogin(false);
+        } }, 'Signup'))), _react2.default.createElement(_Login2.default, { active: this.state.toggleLogin }), _react2.default.createElement(_SignUp2.default, { active: !this.state.toggleLogin }), _react2.default.createElement('p', { className: this.state.toggleLogin ? "footer-links" : "footer-links adjust" }, _react2.default.createElement('span', { className: 'link' }, 'Privacy'), ' / ', _react2.default.createElement('span', { className: 'link' }, 'Terms'), ' / piBrain \xA9 ', new Date().getFullYear(), ' '));
     }
   }]);
 
@@ -12337,17 +12355,17 @@ exports.default = SidebarMenu;
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () {
-	function defineProperties(target, props) {
-		for (var i = 0; i < props.length; i++) {
-			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-		}
-	}return function (Constructor, protoProps, staticProps) {
-		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-	};
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
 }();
 
 var _react = __webpack_require__(7);
@@ -12367,50 +12385,148 @@ var _reactCssModules = __webpack_require__(16);
 var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 
 function _interopRequireDefault(obj) {
-	return obj && obj.__esModule ? obj : { default: obj };
+  return obj && obj.__esModule ? obj : { default: obj };
 }
 
 function _classCallCheck(instance, Constructor) {
-	if (!(instance instanceof Constructor)) {
-		throw new TypeError("Cannot call a class as a function");
-	}
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
 }
 
 function _possibleConstructorReturn(self, call) {
-	if (!self) {
-		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-	}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 }
 
 function _inherits(subClass, superClass) {
-	if (typeof superClass !== "function" && superClass !== null) {
-		throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
-var SignUp = function (_Component) {
-	_inherits(SignUp, _Component);
+var Signup = function (_Component) {
+  _inherits(Signup, _Component);
 
-	function SignUp(props) {
-		_classCallCheck(this, SignUp);
+  function Signup(props) {
+    _classCallCheck(this, Signup);
 
-		var _this = _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Signup.__proto__ || Object.getPrototypeOf(Signup)).call(this, props));
 
-		_this.state = { first_name: "", last_name: "", email: "", password: "" };
-		return _this;
-	}
+    _this.state = { first_name: "", last_name: "", email: "", password: "", birthday: "", gender: "", location: "" };
+    return _this;
+  }
 
-	_createClass(SignUp, [{
-		key: 'render',
-		value: function render(props) {
-			return _react2.default.createElement('div', null);
-		}
-	}]);
+  _createClass(Signup, [{
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var email = this.state.email.trim();
+      var password = this.state.amount;
+      if (!email || !password) {
+        return;
+      }
 
-	return SignUp;
+      this.props.onSubmit({ email: email, password: password });
+      this.setState({
+        email: '',
+        password: ''
+      });
+    }
+  }, {
+    key: 'validateEmail',
+    value: function validateEmail(value) {
+      //email regex
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(value);
+    }
+  }, {
+    key: 'validatePassword',
+    value: function validatePassword(value) {
+      return true;
+    }
+  }, {
+    key: 'commonValidate',
+    value: function commonValidate() {
+      return true;
+    }
+  }, {
+    key: 'setValue',
+    value: function setValue(field, event) {
+      var object = {};
+      object[field] = event.target.value;
+      this.setState(object);
+    }
+  }, {
+    key: 'render',
+    value: function render(props) {
+      return _react2.default.createElement('div', { id: 'signup', className: this.props.active ? "signup-container active" : "signup-container" }, _react2.default.createElement('form', { className: 'signup-form' }, _react2.default.createElement(_InputField2.default, {
+        type: "text",
+        className: "input first_name",
+        value: this.state.first_name,
+        uniqueName: 'first_name',
+        text: 'First Name',
+        textArea: false,
+        required: true,
+        minCharacters: 6,
+        onChange: this.setValue.bind(this, 'first_name'),
+        errorMessage: 'Your first name is a required field',
+        emptyMessage: 'Your first name is a required field' }), _react2.default.createElement('br', null), _react2.default.createElement(_InputField2.default, {
+        type: "text",
+        className: "input last_name",
+        value: this.state.last_name,
+        uniqueName: 'last_name',
+        text: 'Last Name',
+        textArea: false,
+        required: true,
+        minCharacters: 6,
+        onChange: this.setValue.bind(this, 'last_name'),
+        errorMessage: 'Your last name is a required field',
+        emptyMessage: 'Your last name is a required field' }), _react2.default.createElement('br', null), _react2.default.createElement(_InputField2.default, {
+        type: "email",
+        className: "input email",
+        value: this.state.email,
+        uniqueName: 'email',
+        text: 'Email Address',
+        textArea: false,
+        required: true,
+        minCharacters: 6,
+        validate: this.validateEmail,
+        onChange: this.setValue.bind(this, 'email'),
+        errorMessage: 'Sorry, the email you\'ve entered is invalid',
+        emptyMessage: 'Email is required field!' }), _react2.default.createElement('br', null), _react2.default.createElement(_InputField2.default, {
+        type: "password",
+        className: "input password",
+        value: this.state.email,
+        uniqueName: 'password',
+        text: 'Create a Password',
+        textArea: false,
+        required: true,
+        minCharacters: 6,
+        validate: this.validatePasswordStrength,
+        onChange: this.setValue.bind(this, 'password'),
+        errorMessage: 'Sorry, your password is not strong enough!',
+        emptyMessage: 'Password is required field!' }), _react2.default.createElement('br', null), _react2.default.createElement(_InputField2.default, {
+        type: "password",
+        className: "input password-confirm",
+        value: this.state.password,
+        uniqueName: 'password-confirm',
+        text: 'Confirm your password',
+        textArea: false,
+        required: true,
+        minCharacters: 6,
+        validate: this.validatePasswordMatch,
+        onChange: this.setValue.bind(this, 'password'),
+        errorMessage: 'Sorry, your password does not match...',
+        emptyMessage: 'Retype your password is required field!' }), _react2.default.createElement('input', { className: 'submit-btn', type: 'submit', value: 'Submit' })));
+    }
+  }]);
+
+  return Signup;
 }(_react.Component);
 
-exports.default = SignUp;
+exports.default = Signup;
 
 /***/ },
 /* 141 */
@@ -12491,7 +12607,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "#login {\n  position: relative;\n  top: 15%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #login .forgot-password {\n    font-family: \"PT Mono\", monospace;\n    font-size: 12px;\n    margin: 20px 50px;\n    color: #222; }\n    #login .forgot-password span {\n      border-bottom: 1px solid #222;\n      padding-bottom: 2px;\n      cursor: pointer; }\n  #login input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 50px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #login input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none;\n    cursor: pointer; }\n  #login input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #login input[type=email]:focus, #login input[type=password]:focus {\n    border: 3px solid #555; }\n  #login .form-container {\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: none; }\n    #login .form-container.active {\n      display: block; }\n", ""]);
+exports.push([module.i, "#login {\n  position: relative;\n  top: 15%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #login .forgot-password {\n    font-family: \"PT Mono\", monospace;\n    font-size: 12px;\n    margin: 20px 50px;\n    color: #222; }\n    #login .forgot-password span {\n      border-bottom: 1px solid #222;\n      padding-bottom: 2px;\n      cursor: pointer; }\n  #login input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 50px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #login input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none;\n    cursor: pointer; }\n  #login input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #login input[type=email]:focus, #login input[type=password]:focus {\n    border: 3px solid #555; }\n\n.login-container {\n  overflow: hidden;\n  display: none; }\n  .login-container.active {\n    display: block; }\n", ""]);
 
 // exports
 
@@ -12519,7 +12635,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n  .side-container .header-container {\n    width: 100%;\n    background: #98c5ec;\n    height: 8%;\n    position: relative;\n    top: -8px;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    .side-container .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 25%); }\n      .side-container .header-container .login-header span {\n        padding-bottom: 4px;\n        cursor: pointer;\n        border: 2px solid rgba(255, 225, 255, 0);\n        -webkit-transition: border 300ms ease;\n        -moz-transition: border 300ms ease;\n        -ms-transition: border 300ms ease;\n        -o-transition: border 300ms ease;\n        transition: border 300ms ease; }\n      .side-container .header-container .login-header span:hover {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .login.active {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .signup.active {\n        border-bottom: 2px solid white; }\n  .side-container .footer-links {\n    text-align: center;\n    font: 12px 'PT Mono', monpspace;\n    position: relative;\n    top: 45%; }\n    .side-container .footer-links span {\n      cursor: pointer; }\n", ""]);
+exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n  .side-container .header-container {\n    width: 100%;\n    background: #98c5ec;\n    height: 8%;\n    position: relative;\n    top: -8px;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    .side-container .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 25%); }\n      .side-container .header-container .login-header span {\n        padding-bottom: 4px;\n        cursor: pointer;\n        border: 2px solid rgba(255, 225, 255, 0);\n        -webkit-transition: border 300ms ease;\n        -moz-transition: border 300ms ease;\n        -ms-transition: border 300ms ease;\n        -o-transition: border 300ms ease;\n        transition: border 300ms ease; }\n      .side-container .header-container .login-header span:hover {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .login.active {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .signup.active {\n        border-bottom: 2px solid white; }\n  .side-container .footer-links {\n    text-align: center;\n    font: 12px 'PT Mono', monpspace;\n    position: relative;\n    top: 45%; }\n    .side-container .footer-links.adjust {\n      top: 26.1%; }\n    .side-container .footer-links span {\n      cursor: pointer; }\n", ""]);
 
 // exports
 
@@ -12533,7 +12649,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "#signup {\n  position: relative;\n  top: 25%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #signup input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 50px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #signup input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none;\n    cursor: pointer; }\n  #signup input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #signup input[type=email]:focus, #signup input[type=password]:focus, #signup input[type=text]:focus {\n    border: 3px solid #555; }\n\n.signup-container {\n  overflow: hidden;\n  display: none; }\n  .signup-container.active {\n    display: block; }\n", ""]);
 
 // exports
 

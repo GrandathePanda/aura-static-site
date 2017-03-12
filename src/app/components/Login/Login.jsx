@@ -43,7 +43,7 @@ export default class Login extends Component {
 
   render(props) {
     return (
-      <div id="login" className={this.props.active ? "form-container active" : "form-container" }>
+      <div id="login" className={this.props.active ? "login-container active" : "login-container" }>
         <form className="login-form">
           <InputField
           type={"email"}

@@ -49,13 +49,12 @@ $new-blue: #82cae8;
     border: 3px solid #555;
   }
 
-  .form-container{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: none;
-    &.active{
-      display: block;
-    }
+}
+
+.login-container{
+  overflow: hidden;
+  display: none;
+  &.active{
+    display: block;
   }
 }
