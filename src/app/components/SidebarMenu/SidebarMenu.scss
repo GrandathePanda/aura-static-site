@@ -76,11 +76,19 @@ $new-blue: #98c5ec;
     top: 45%;
 
     &.adjust {
-      top: 14%;
+      top: 3.9%;
     }
 
     span {
       cursor:pointer;
     }
+  }
 }
+.login-expand-appear {
+   opacity: 0.01;
+}
+
+.login-expand-appear.login-expand-appear-active {
+   opacity: 1;
+   transition: opacity 1s ease-in;
 }

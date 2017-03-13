@@ -44,3 +44,12 @@ $royalBlue: #90a6ed;
 
 	}
 }
+
+.header-fade-appear {
+   opacity: 0.01;
+}
+
+.header-fade-appear.header-fade-appear-active {
+   opacity: 1;
+   transition: opacity 500ms ease-in;
+}

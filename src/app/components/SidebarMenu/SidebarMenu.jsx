@@ -3,6 +3,7 @@ import styles from './SidebarMenu.scss';
 import Profile from '../Profile/Profile.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; 
 import CSSModules from 'react-css-modules';
 
 class SidebarMenu extends Component {
@@ -27,7 +28,7 @@ class SidebarMenu extends Component {
   toggleLogin ( bool ) {
     //when login is false, signup is displayed
     if (this.state.profile_active) {
-      return; 
+      return;
     }
 
     else {
@@ -40,16 +41,20 @@ class SidebarMenu extends Component {
   render(props) {
     return (
       <div className={ this.props.active ? 'side-container active' : 'side-container' } >
-        <Profile active={this.state.profile_active} />
-        <div className="header-container">
-          <p className="login-header">
+      <Profile active={this.state.profile_active} />
+      <ReactCSSTransitionGroup transitionName="login-expand"
+      transitionAppear={this.props.active} transitionAppearTimeout={1000}
+      transitionEnter={false} transitionLeave={false}>
+      <div className="header-container">
+      <p className="login-header">
       <span className={this.state.toggleLogin ? "login active" : "login"} onClick={ () => this.toggleLogin(true)}>Login</span>|
-      <span className={this.state.toggleLogin ? "signup" : "signup active"} onClick={ () => this.toggleLogin(false)}>Signup</span>
-          </p>
-        </div>
-        <Login active={this.state.toggleLogin} />
-        <Signup active={!this.state.toggleLogin} />
-        <p className={this.state.toggleLogin ? "footer-links" : "footer-links adjust"}><span className="link">Privacy</span> / <span className="link">Terms</span> / piBrain © {new Date().getFullYear()} </p>
+      <span className={this.state.toggleLogin ? "signup" : "signup active"} onClick={ () => this.toggleLogin(false)}>Register</span>
+      </p>
+      </div>
+      </ReactCSSTransitionGroup>
+      <Login active={this.state.toggleLogin} />
+      <Signup active={!this.state.toggleLogin} />
+      <p className={this.state.toggleLogin ? "footer-links" : "footer-links adjust"}><span className="link">Privacy</span> / <span className="link">Terms</span> / piBrain © {new Date().getFullYear()} </p>
       </div>
     );
   }
