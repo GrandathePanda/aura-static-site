@@ -2,19 +2,15 @@ import React, { Component, PropTypes } from 'react';
 import styles from './Automation.scss';
 import CSSModules from 'react-css-modules';
 
-export default class Automation extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+class Automation extends Component {
 	render(props) {
 		return (
 			<div>
 				<div className="automation-command">
 					<p className="title">{this.props.name}</p>
 					<div className="controls">
-						<img className="edit" src={require("../../../assets/edit_B.png")}></img>
-						<img className="delete" src={require("../../../assets/close.png")}></img>
+						<img className="edit"  role="presentation" src={require("../../../assets/edit_B.png")}></img>
+						<img className="delete" role="presentation" src={require("../../../assets/close.png")}></img>
 					</div>
 				</div>
 				<div className="expanded-menu hide">
@@ -26,3 +22,4 @@ export default class Automation extends Component {
 		);
 	}
 }
+export default CSSModules(Automation, styles);

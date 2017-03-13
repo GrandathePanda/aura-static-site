@@ -3,11 +3,7 @@ import styles from './Automations.scss';
 import CSSModules from 'react-css-modules';
 import Automation from '../Automation/Automation.jsx';
 
-export default class Automations extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+class Automations extends Component {
 	render(props) {
 		var automation_data = [
 			{name:'name one', key:'000', interval: 'day', time: '9:00' },
@@ -19,7 +15,7 @@ export default class Automations extends Component {
 		];
 
 		const AutomationsList = ({automations}) => (
-			<div id= {"automations"} className="automation-container">
+			<div id={"automations"} className="automation-container">
 				<p className="section-title">Automations</p>
 				{automations.map(automation => (
 					<Automation key={automation.key} name={automation.name} interval={automation.interval} execTime={automation.time} />
@@ -34,3 +30,4 @@ export default class Automations extends Component {
 		);
 	}
 }
+export default CSSModules(Automations, styles);

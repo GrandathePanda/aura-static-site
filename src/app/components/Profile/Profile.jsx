@@ -3,11 +3,7 @@ import styles from './Profile.scss';
 import Automations from '../Automations/Automations.jsx';
 import CSSModules from 'react-css-modules';
 
-export default class Profile extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+class Profile extends Component {
   render(props) {
     return(
       <div>
@@ -18,3 +14,4 @@ export default class Profile extends Component {
     );
   }
 }
+export default CSSModules(Profile, styles);

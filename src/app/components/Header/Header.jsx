@@ -1,5 +1,4 @@
 import React from 'react';
-import {render} from 'react-dom';
 import styles from './Header.scss';
 import CSSModules from 'react-css-modules';
 

@@ -12004,7 +12004,7 @@ var Dropdown = function (_Component) {
     key: 'render',
     value: function render(props) {
 
-      return _react2.default.createElement('div', null, _react2.default.createElement('p', { className: 'hello' }, 'test'), _react2.default.createElement('select', { className: "select-" + this.props.label, onChange: this.handleChanges }, _react2.default.createElement('option', { selected: true, disabled: true, hidden: true }, this.props.placeholder), this.createSelectItems()));
+      return _react2.default.createElement('select', { className: "select-" + this.props.label, onChange: this.handleChanges }, _react2.default.createElement('option', { selected: true, disabled: true, hidden: true }, this.props.placeholder), this.createSelectItems());
     }
   }]);
 
@@ -12361,9 +12361,9 @@ var _Login = __webpack_require__(138);
 
 var _Login2 = _interopRequireDefault(_Login);
 
-var _SignUp = __webpack_require__(141);
+var _Signup = __webpack_require__(141);
 
-var _SignUp2 = _interopRequireDefault(_SignUp);
+var _Signup2 = _interopRequireDefault(_Signup);
 
 var _reactCssModules = __webpack_require__(13);
 
@@ -12437,7 +12437,7 @@ var SidebarMenu = function (_Component) {
           return _this2.toggleLogin(true);
         } }, 'Login'), '|', _react2.default.createElement('span', { className: this.state.toggleLogin ? "signup" : "signup active", onClick: function onClick() {
           return _this2.toggleLogin(false);
-        } }, 'Signup'))), _react2.default.createElement(_Login2.default, { active: this.state.toggleLogin }), _react2.default.createElement(_SignUp2.default, { active: !this.state.toggleLogin }), _react2.default.createElement('p', { className: this.state.toggleLogin ? "footer-links" : "footer-links adjust" }, _react2.default.createElement('span', { className: 'link' }, 'Privacy'), ' / ', _react2.default.createElement('span', { className: 'link' }, 'Terms'), ' / piBrain \xA9 ', new Date().getFullYear(), ' '));
+        } }, 'Signup'))), _react2.default.createElement(_Login2.default, { active: this.state.toggleLogin }), _react2.default.createElement(_Signup2.default, { active: !this.state.toggleLogin }), _react2.default.createElement('p', { className: this.state.toggleLogin ? "footer-links" : "footer-links adjust" }, _react2.default.createElement('span', { className: 'link' }, 'Privacy'), ' / ', _react2.default.createElement('span', { className: 'link' }, 'Terms'), ' / piBrain \xA9 ', new Date().getFullYear(), ' '));
     }
   }]);
 
@@ -12473,9 +12473,9 @@ var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SignUp = __webpack_require__(377);
+var _Signup = __webpack_require__(377);
 
-var _SignUp2 = _interopRequireDefault(_SignUp);
+var _Signup2 = _interopRequireDefault(_Signup);
 
 var _InputField = __webpack_require__(80);
 
@@ -12657,14 +12657,14 @@ var Signup = function (_Component) {
         validate: this.validatePasswordMatch,
         onChange: this.setValue.bind(this, 'password'),
         errorMessage: 'Sorry, your password does not match...',
-        emptyMessage: 'Retype your password is required field!' }), _react2.default.createElement('br', null), _react2.default.createElement('p', { className: 'form-label' }, 'Birthday'), _react2.default.createElement(_Dropdown2.default, { className: 'bd-input', options: monthArray, onChange: this.setValue, label: "month", placeholder: 'Month' }), _react2.default.createElement(_Dropdown2.default, { className: 'bd-input', options: dayArray, onChange: this.setValue, label: "day", placeholder: 'Day' }), _react2.default.createElement(_Dropdown2.default, { className: 'bd-input', options: yearArray, onChange: this.setValue, label: "year", placeholder: 'Year' }), _react2.default.createElement('input', { className: 'submit-btn', type: 'submit', value: 'Submit' })));
+        emptyMessage: 'Retype your password is required field!' }), _react2.default.createElement('br', null), _react2.default.createElement('p', { className: 'form-label' }, 'Birthday'), _react2.default.createElement('div', { className: 'birthday-container' }, _react2.default.createElement(_Dropdown2.default, { className: 'bd-input', options: monthArray, onChange: this.setValue, label: "month", placeholder: 'Month' }), _react2.default.createElement(_Dropdown2.default, { className: 'bd-input', options: dayArray, onChange: this.setValue, label: "day", placeholder: 'Day' }), _react2.default.createElement(_Dropdown2.default, { className: 'bd-input', options: yearArray, onChange: this.setValue, label: "year", placeholder: 'Year' })), _react2.default.createElement('input', { className: 'submit-btn', type: 'submit', value: 'Submit' })));
     }
   }]);
 
   return Signup;
 }(_react.Component);
 
-exports.default = (0, _reactCssModules2.default)(Signup, _SignUp2.default);
+exports.default = (0, _reactCssModules2.default)(Signup, _Signup2.default);
 
 /***/ },
 /* 142 */
@@ -12717,7 +12717,7 @@ exports = module.exports = __webpack_require__(12)();
 
 
 // module
-exports.push([module.i, ".signup-form select {\n  width: 25%;\n  padding: 8px 20px;\n  margin: 8px 50px;\n  border-radius: 5px;\n  box-sizing: border-box;\n  border: 3px solid #d8d6e2;\n  -webkit-transition: 0.5s;\n  font: 12px 'PT Mono', monospace;\n  transition: 0.5s;\n  outline: none;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\n.signup-form .hello {\n  width: 100%; }\n\n.hello {\n  width: 100%; }\n", ""]);
+exports.push([module.i, ".signup-form select {\n  width: 23%;\n  padding: 8px 20px;\n  margin: 0px 10px;\n  border-radius: 5px;\n  box-sizing: border-box;\n  border: 3px solid #d8d6e2;\n  -webkit-transition: 0.5s;\n  font: 12px 'PT Mono', monospace;\n  transition: 0.5s;\n  outline: none;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none; }\n\n.signup-form select:hover {\n  color: white;\n  background: #222; }\n", ""]);
 
 // exports
 
@@ -12787,7 +12787,7 @@ exports = module.exports = __webpack_require__(12)();
 
 
 // module
-exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n  .side-container .header-container {\n    width: 100%;\n    background: #98c5ec;\n    height: 8%;\n    position: relative;\n    top: -8px;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    .side-container .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 25%); }\n      .side-container .header-container .login-header span {\n        padding-bottom: 4px;\n        cursor: pointer;\n        border: 2px solid rgba(255, 225, 255, 0);\n        -webkit-transition: border 300ms ease;\n        -moz-transition: border 300ms ease;\n        -ms-transition: border 300ms ease;\n        -o-transition: border 300ms ease;\n        transition: border 300ms ease; }\n      .side-container .header-container .login-header span:hover {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .login.active {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .signup.active {\n        border-bottom: 2px solid white; }\n  .side-container .footer-links {\n    text-align: center;\n    font: 12px 'PT Mono', monpspace;\n    position: relative;\n    top: 45%; }\n    .side-container .footer-links.adjust {\n      top: 26.1%; }\n    .side-container .footer-links span {\n      cursor: pointer; }\n", ""]);
+exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n  .side-container .header-container {\n    width: 100%;\n    background: #98c5ec;\n    height: 8%;\n    position: relative;\n    top: -8px;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    .side-container .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 25%); }\n      .side-container .header-container .login-header span {\n        padding-bottom: 4px;\n        cursor: pointer;\n        border: 2px solid rgba(255, 225, 255, 0);\n        -webkit-transition: border 300ms ease;\n        -moz-transition: border 300ms ease;\n        -ms-transition: border 300ms ease;\n        -o-transition: border 300ms ease;\n        transition: border 300ms ease; }\n      .side-container .header-container .login-header span:hover {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .login.active {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .signup.active {\n        border-bottom: 2px solid white; }\n  .side-container .footer-links {\n    text-align: center;\n    font: 12px 'PT Mono', monpspace;\n    position: relative;\n    top: 45%; }\n    .side-container .footer-links.adjust {\n      top: 14%; }\n    .side-container .footer-links span {\n      cursor: pointer; }\n", ""]);
 
 // exports
 
@@ -12801,7 +12801,7 @@ exports = module.exports = __webpack_require__(12)();
 
 
 // module
-exports.push([module.i, "#signup {\n  position: relative;\n  top: 25%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #signup select {\n    width: 25%;\n    padding: 8px 20px;\n    margin: 8px 50px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none;\n    -webkit-appearance: none;\n    -moz-appearance: none;\n    appearance: none; }\n  #signup input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 50px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #signup input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none;\n    cursor: pointer; }\n  #signup input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #signup input[type=email]:focus, #signup input[type=password]:focus, #signup input[type=text]:focus {\n    border: 3px solid #555; }\n\n.signup-container {\n  overflow: hidden;\n  display: none; }\n  .signup-container.active {\n    display: block; }\n", ""]);
+exports.push([module.i, "#signup {\n  position: relative;\n  top: 30%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: auto; }\n  #signup input {\n    width: 80%;\n    padding: 12px 20px;\n    margin: 8px 50px;\n    border-radius: 5px;\n    box-sizing: border-box;\n    border: 3px solid #d8d6e2;\n    -webkit-transition: 0.5s;\n    font: 12px 'PT Mono', monospace;\n    transition: 0.5s;\n    outline: none; }\n  #signup input[type=submit] {\n    background: rgba(220, 220, 220, 0.27);\n    border: none;\n    cursor: pointer; }\n  #signup input[type=submit]:hover {\n    background: #222;\n    color: white; }\n  #signup input[type=email]:focus, #signup input[type=password]:focus, #signup input[type=text]:focus {\n    border: 3px solid #555; }\n  #signup .birthday-container {\n    width: 100%;\n    overflow: hidden;\n    padding: 0px 40px;\n    margin: 20px 0px; }\n  #signup .form-label {\n    font: 12px 'PT Mono', monospace;\n    margin: 0px 50px;\n    color: #222;\n    padding-bottom: 6px;\n    width: 80%;\n    border-bottom: 1px solid #d8d6e2; }\n\n.signup-container {\n  overflow: hidden;\n  display: none; }\n  .signup-container.active {\n    display: block; }\n", ""]);
 
 // exports
 
@@ -29387,8 +29387,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./SignUp.scss", function() {
-			var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./SignUp.scss");
+		module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./Signup.scss", function() {
+			var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./Signup.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

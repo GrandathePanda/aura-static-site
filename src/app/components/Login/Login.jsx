@@ -3,7 +3,7 @@ import styles from './Login.scss';
 import InputField from '../InputField/InputField.jsx';
 import CSSModules from 'react-css-modules';
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { email:"", password: "" };
@@ -44,38 +44,39 @@ export default class Login extends Component {
   render(props) {
     return (
       <div id="login" className={this.props.active ? "login-container active" : "login-container" }>
-        <form className="login-form">
-          <InputField
-          type={"email"}
-          className={"input email"}
-          value={this.state.email}
-          uniqueName="email"
-          text="Email Address"
-          textArea={false}
-          required={true}
-          minCharacters={6}
-          validate={this.validateEmail}
-          onChange={this.setValue.bind(this, 'email')}
-          errorMessage="Sorry, the email you've entered is invalid"
-          emptyMessage="Email is required field" />
-          <br></br>
-          <InputField
-          type={"password"}
-          className={"input password"}
-          value={this.state.email}
-          uniqueName="email"
-          text="Password"
-          textArea={false}
-          required={true}
-          minCharacters={6}
-          validate={this.validatePassword}
-          onChange={this.setValue.bind(this, 'password')}
-          errorMessage="Sorry, your email/password combinations is not correct"
-          emptyMessage="Password is required field" />
-          <p className="forgot-password">Forgot your passsword? Click <span className="link">here</span>!</p>
-          <input className="submit-btn" type="submit" value="Submit" />
+      <form className="login-form">
+      <InputField
+      type={"email"}
+      className={"input email"}
+      value={this.state.email}
+      uniqueName="email"
+      text="Email Address"
+      textArea={false}
+      required={true}
+      minCharacters={6}
+      validate={this.validateEmail}
+      onChange={this.setValue.bind(this, 'email')}
+      errorMessage="Sorry, the email you've entered is invalid"
+      emptyMessage="Email is required field" />
+      <br></br>
+      <InputField
+      type={"password"}
+      className={"input password"}
+      value={this.state.email}
+      uniqueName="email"
+      text="Password"
+      textArea={false}
+      required={true}
+      minCharacters={6}
+      validate={this.validatePassword}
+      onChange={this.setValue.bind(this, 'password')}
+      errorMessage="Sorry, your email/password combinations is not correct"
+      emptyMessage="Password is required field" />
+      <p className="forgot-password">Forgot your passsword? Click <span className="link">here</span>!</p>
+      <input className="submit-btn" type="submit" value="Submit" />
       </form>
       </div>
-      );
-    }
+    );
   }
+}
+export default CSSModules(Login, styles);

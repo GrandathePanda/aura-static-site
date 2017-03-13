@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import styles from './InputField.scss';
 import CSSModules from 'react-css-modules';
 
-export default class InputField extends Component {
+class InputField extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -53,7 +53,7 @@ export default class InputField extends Component {
 			value: value,
 			isEmpty: Object.keys(value).length === 0,
 			valid: valid,
-			errorMessage: message,
+			errorMessage: errorMessage,
 			errorVisible: errorVisible
 		});
 
@@ -97,3 +97,5 @@ export default class InputField extends Component {
 		);
 	}
 }
+export default CSSModules(InputField, styles)
+
