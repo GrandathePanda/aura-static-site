@@ -23,7 +23,7 @@ $new-blue: #98c5ec;
   .header-container {
     width: 100%;
     background: $new-blue;
-    height: 8%;
+    height: 9%;
     position:relative;
     top: -8px;
     overflow:hidden;
@@ -38,7 +38,7 @@ $new-blue: #98c5ec;
       position: relative;
       text-align: center;
       left: 50%;
-      transform: translate(-50%, 25%);
+      transform: translate(-50%, 75%);
 
       span {
         padding-bottom: 4px;
@@ -84,11 +84,16 @@ $new-blue: #98c5ec;
     }
   }
 }
-.login-expand-appear {
-   opacity: 0.01;
+
+.fade-wait-appear {
+  opacity: 0;
+}
+.fade-wait-appear.fade-wait-appear-active {
+  opacity: 1;
+  /* Delay the enter animation until the leave completes */
+  transition: opacity .4s ease-in .6s;
 }
 
-.login-expand-appear.login-expand-appear-active {
-   opacity: 1;
-   transition: opacity 1s ease-in;
+.fade-wait-height {
+  transition: height .6s ease-in-out;
 }

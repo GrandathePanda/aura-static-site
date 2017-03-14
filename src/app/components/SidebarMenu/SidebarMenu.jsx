@@ -3,8 +3,9 @@ import styles from './SidebarMenu.scss';
 import Profile from '../Profile/Profile.jsx';
 import Login from '../Login/Login.jsx';
 import Signup from '../Signup/Signup.jsx';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; 
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import CSSModules from 'react-css-modules';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SidebarMenu extends Component {
   constructor(props) {
@@ -42,11 +43,11 @@ class SidebarMenu extends Component {
     return (
       <div className={ this.props.active ? 'side-container active' : 'side-container' } >
       <Profile active={this.state.profile_active} />
-      <ReactCSSTransitionGroup transitionName="login-expand"
-      transitionAppear={this.props.active} transitionAppearTimeout={1000}
-      transitionEnter={false} transitionLeave={false}>
+      <ReactCSSTransitionGroup transitionName = "header-fade"
+      transitionAppear = {true} transitionAppearTimeout = {500}
+      transitionEnter = {false} transitionLeave = {false}>
       <div className="header-container">
-      <p className="login-header">
+      <p key="new" className="login-header">
       <span className={this.state.toggleLogin ? "login active" : "login"} onClick={ () => this.toggleLogin(true)}>Login</span>|
       <span className={this.state.toggleLogin ? "signup" : "signup active"} onClick={ () => this.toggleLogin(false)}>Register</span>
       </p>

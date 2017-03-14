@@ -13,6 +13,7 @@
 	transition: transform 600ms;
 	transition-timing-function: cubic-bezier(.56,.97,.94,.99);
 	height: 100vh;
+  overflow:hidden;
 
 	&.pushed {
 		 transform: translateX(30vw);
