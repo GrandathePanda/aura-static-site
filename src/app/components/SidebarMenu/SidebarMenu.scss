@@ -15,59 +15,9 @@ $new-blue: #98c5ec;
 	transition: transform 600ms;
 	transition-timing-function: cubic-bezier(.56,.97,.94,.99);
 
-
 	&.active {
 		 transform: translateX(30vw);
 	}
-
-  .header-container {
-    width: 100%;
-    background: $new-blue;
-    height: 9%;
-    position:relative;
-    top: -8px;
-    overflow:hidden;
-    border-radius: 10px;
-    margin-bottom: 40px;
-    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0);
-
-    .login-header {
-      width: auto;
-      color: white;
-      font: 21px 'PT Mono', monospace;
-      position: relative;
-      text-align: center;
-      left: 50%;
-      transform: translate(-50%, 75%);
-
-      span {
-        padding-bottom: 4px;
-        cursor:pointer;
-        border: 2px solid rgba(255, 225, 255, 0);
-        -webkit-transition: border 300ms ease;
-        -moz-transition: border 300ms ease;
-        -ms-transition: border 300ms ease;
-        -o-transition: border 300ms ease;
-        transition: border 300ms ease;
-      }
-
-      span:hover {
-        border-bottom: 2px solid rgba(255, 255, 255, 1);
-      }
-
-      .login {
-        &.active {
-          border-bottom: 2px solid rgba(255, 255, 255, 1);;
-        }
-      }
-
-      .signup {
-        &.active {
-          border-bottom: 2px solid rgba(255, 255, 255, 1); ;
-        }
-      }
-    }
-  }
 
   .footer-links {
     text-align: center;
@@ -84,16 +34,11 @@ $new-blue: #98c5ec;
     }
   }
 }
-
-.fade-wait-appear {
-  opacity: 0;
-}
-.fade-wait-appear.fade-wait-appear-active {
-  opacity: 1;
-  /* Delay the enter animation until the leave completes */
-  transition: opacity .4s ease-in .6s;
+.header-fade-appear {
+   opacity: 0.01;
 }
 
-.fade-wait-height {
-  transition: height .6s ease-in-out;
+.header-fade-appear.header-fade-appear-active {
+   opacity: 1;
+   transition: opacity 500ms ease-in;
 }

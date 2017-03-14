@@ -14520,6 +14520,10 @@ var _Signup = __webpack_require__(153);
 
 var _Signup2 = _interopRequireDefault(_Signup);
 
+var _SideHeader = __webpack_require__(395);
+
+var _SideHeader2 = _interopRequireDefault(_SideHeader);
+
 var _reactCssTransitionReplace = __webpack_require__(299);
 
 var _reactCssTransitionReplace2 = _interopRequireDefault(_reactCssTransitionReplace);
@@ -14594,15 +14598,7 @@ var SidebarMenu = function (_Component) {
   }, {
     key: 'render',
     value: function render(props) {
-      var _this2 = this;
-
-      return _react2.default.createElement('div', { className: this.props.active ? 'side-container active' : 'side-container' }, _react2.default.createElement(_Profile2.default, { active: this.state.profile_active }), _react2.default.createElement(_reactAddonsCssTransitionGroup2.default, { transitionName: 'header-fade',
-        transitionAppear: true, transitionAppearTimeout: 500,
-        transitionEnter: false, transitionLeave: false }, _react2.default.createElement('div', { className: 'header-container' }, _react2.default.createElement('p', { key: 'new', className: 'login-header' }, _react2.default.createElement('span', { className: this.state.toggleLogin ? "login active" : "login", onClick: function onClick() {
-          return _this2.toggleLogin(true);
-        } }, 'Login'), '|', _react2.default.createElement('span', { className: this.state.toggleLogin ? "signup" : "signup active", onClick: function onClick() {
-          return _this2.toggleLogin(false);
-        } }, 'Register')))), _react2.default.createElement(_Login2.default, { active: this.state.toggleLogin }), _react2.default.createElement(_Signup2.default, { active: !this.state.toggleLogin }), _react2.default.createElement('p', { className: this.state.toggleLogin ? "footer-links" : "footer-links adjust" }, _react2.default.createElement('span', { className: 'link' }, 'Privacy'), ' / ', _react2.default.createElement('span', { className: 'link' }, 'Terms'), ' / piBrain \xA9 ', new Date().getFullYear(), ' '));
+      return _react2.default.createElement('div', { className: this.props.active ? 'side-container active' : 'side-container active' }, _react2.default.createElement(_Profile2.default, { active: this.state.profile_active }), _react2.default.createElement(_SideHeader2.default, { active: this.state.toggleLogin, toggleLogin: this.toggleLogin, animate: true }), _react2.default.createElement(_Login2.default, { active: this.state.toggleLogin }), _react2.default.createElement(_Signup2.default, { active: !this.state.toggleLogin }), _react2.default.createElement('p', { className: this.state.toggleLogin ? "footer-links" : "footer-links adjust" }, _react2.default.createElement('span', { className: 'link' }, 'Privacy'), ' / ', _react2.default.createElement('span', { className: 'link' }, 'Terms'), ' / piBrain \xA9 ', new Date().getFullYear(), ' '));
     }
   }]);
 
@@ -14965,7 +14961,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n  .side-container .header-container {\n    width: 100%;\n    background: #98c5ec;\n    height: 9%;\n    position: relative;\n    top: -8px;\n    overflow: hidden;\n    border-radius: 10px;\n    margin-bottom: 40px;\n    box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n    .side-container .header-container .login-header {\n      width: auto;\n      color: white;\n      font: 21px 'PT Mono', monospace;\n      position: relative;\n      text-align: center;\n      left: 50%;\n      transform: translate(-50%, 75%); }\n      .side-container .header-container .login-header span {\n        padding-bottom: 4px;\n        cursor: pointer;\n        border: 2px solid rgba(255, 225, 255, 0);\n        -webkit-transition: border 300ms ease;\n        -moz-transition: border 300ms ease;\n        -ms-transition: border 300ms ease;\n        -o-transition: border 300ms ease;\n        transition: border 300ms ease; }\n      .side-container .header-container .login-header span:hover {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .login.active {\n        border-bottom: 2px solid white; }\n      .side-container .header-container .login-header .signup.active {\n        border-bottom: 2px solid white; }\n  .side-container .footer-links {\n    text-align: center;\n    font: 12px 'PT Mono', monpspace;\n    position: relative;\n    top: 45%; }\n    .side-container .footer-links.adjust {\n      top: 3.9%; }\n    .side-container .footer-links span {\n      cursor: pointer; }\n\n.fade-wait-appear {\n  opacity: 0; }\n\n.fade-wait-appear.fade-wait-appear-active {\n  opacity: 1;\n  /* Delay the enter animation until the leave completes */\n  transition: opacity .4s ease-in .6s; }\n\n.fade-wait-height {\n  transition: height .6s ease-in-out; }\n", ""]);
+exports.push([module.i, ".side-container {\n  position: absolute;\n  overflow: hidden;\n  background: white;\n  left: -30vw;\n  z-index: 90;\n  width: 30vw;\n  height: 100vh;\n  -webkit-box-shadow: 5px -5px 39px -14px black;\n  -moz-box-shadow: 5px -5px 39px -14px black;\n  box-shadow: 5px -5px 39px -14px black;\n  transition: transform 600ms;\n  transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99); }\n  .side-container.active {\n    transform: translateX(30vw); }\n  .side-container .footer-links {\n    text-align: center;\n    font: 12px 'PT Mono', monpspace;\n    position: relative;\n    top: 45%; }\n    .side-container .footer-links.adjust {\n      top: 3.9%; }\n    .side-container .footer-links span {\n      cursor: pointer; }\n\n.header-fade-appear {\n  opacity: 0.01; }\n\n.header-fade-appear.header-fade-appear-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n", ""]);
 
 // exports
 
@@ -31958,6 +31954,146 @@ function _interopRequireDefault(obj) {
 }
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
+
+/***/ },
+/* 394 */,
+/* 395 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+  };
+}();
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SideHeader = __webpack_require__(397);
+
+var _SideHeader2 = _interopRequireDefault(_SideHeader);
+
+var _reactCssTransitionReplace = __webpack_require__(299);
+
+var _reactCssTransitionReplace2 = _interopRequireDefault(_reactCssTransitionReplace);
+
+var _reactAddonsCssTransitionGroup = __webpack_require__(107);
+
+var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+var _reactCssModules = __webpack_require__(15);
+
+var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var SideHeader = function (_Component) {
+  _inherits(SideHeader, _Component);
+
+  function SideHeader(props) {
+    _classCallCheck(this, SideHeader);
+
+    var _this = _possibleConstructorReturn(this, (SideHeader.__proto__ || Object.getPrototypeOf(SideHeader)).call(this, props));
+
+    _this.state = {
+      profile_active: false
+    };
+    return _this;
+  }
+
+  _createClass(SideHeader, [{
+    key: 'render',
+    value: function render(props) {
+      var _this2 = this;
+
+      return _react2.default.createElement(_reactAddonsCssTransitionGroup2.default, { transitionName: 'side-header',
+        transitionAppear: this.props.active, transitionAppearTimeout: 500,
+        transitionEnter: false, transitionLeave: false }, _react2.default.createElement('div', { className: 'header-container' }, _react2.default.createElement('p', { key: 'new', className: 'login-header' }, _react2.default.createElement('span', { className: this.props.active ? "login active" : "login", onClick: function onClick() {
+          return _this2.props.toggleLogin(true);
+        } }, 'Login'), '|', _react2.default.createElement('span', { className: this.props.active ? "signup" : "signup active", onClick: function onClick() {
+          return _this2.props.toggleLogin(false);
+        } }, 'Register'))));
+    }
+  }]);
+
+  return SideHeader;
+}(_react.Component);
+
+exports.default = (0, _reactCssModules2.default)(SideHeader, _SideHeader2.default);
+
+/***/ },
+/* 396 */
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(14)();
+// imports
+
+
+// module
+exports.push([module.i, ".header-container {\n  width: 100%;\n  background: #98c5ec;\n  height: 9%;\n  position: relative;\n  top: -8px;\n  overflow: hidden;\n  border-radius: 10px;\n  margin-bottom: 40px;\n  box-shadow: inset 1px 2px 3px 1px rgba(34, 34, 34, 0); }\n  .header-container .login-header {\n    width: auto;\n    color: white;\n    font: 21px 'PT Mono', monospace;\n    position: relative;\n    text-align: center;\n    left: 50%;\n    transform: translate(-50%, 75%); }\n    .header-container .login-header span {\n      padding-bottom: 4px;\n      cursor: pointer;\n      border: 2px solid rgba(255, 225, 255, 0);\n      -webkit-transition: border 300ms ease;\n      -moz-transition: border 300ms ease;\n      -ms-transition: border 300ms ease;\n      -o-transition: border 300ms ease;\n      transition: border 300ms ease; }\n    .header-container .login-header span:hover {\n      border-bottom: 2px solid white; }\n    .header-container .login-header .login.active {\n      border-bottom: 2px solid white; }\n    .header-container .login-header .signup.active {\n      border-bottom: 2px solid white; }\n", ""]);
+
+// exports
+
+
+/***/ },
+/* 397 */
+/***/ function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(396);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(18)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./SideHeader.scss", function() {
+			var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/lib/loader.js!./SideHeader.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }
 /******/ ]);
