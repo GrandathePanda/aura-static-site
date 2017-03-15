@@ -42,7 +42,7 @@ class SidebarMenu extends Component {
 
   render(props) {
     return (
-      <div className={ this.props.active ? 'side-container active' : 'side-container active' } >
+      <div className={ this.props.active ? 'side-container active' : 'side-container' } >
       <Profile active={this.state.profile_active} />
       <SideHeader active={this.state.toggleLogin} toggleLogin={this.toggleLogin} animate={true} />
       <Login active={this.state.toggleLogin} />
