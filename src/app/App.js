@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header.jsx';
 import SidebarMenu from './components/SidebarMenu/SidebarMenu.jsx';
-import styles from './Home.scss';
+import styles from './App.scss';
 import CSSModules from 'react-css-modules';
 
 class App extends Component {
@@ -30,6 +30,8 @@ class App extends Component {
   render(props) {
     return (
       <div>
+      <Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
+      {this.props.children}
       </div>
     );
   }

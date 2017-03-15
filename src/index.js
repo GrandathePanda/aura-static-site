@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
-let hashHistory = Router.hashHistory;
-var Home = React.createClass({
-  render: function() {
-    return (<h1>Welcome to the Home Page</h1>);
-  }
-});
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import App from './app/App.js';
+import Home from './app/containers/Home/Home.js';
 
-ReactDOM.render( <Router history={browserHistory}><Route path="/" component={Home}></Route></Router>, document.getElementById('root'));
+ReactDOM.render(
+  <Router history={browserHistory}>
+  <Route path="/" component={App}>
+  <IndexRoute component={Home}/>
+  </Route>
+  </Router>, document.getElementById('root'));
