@@ -28,17 +28,20 @@ class App extends Component {
   }
 
   render(props) {
+    var clonedChildren = React.cloneElement(this.props.children, {sidebar_active: this.state.sidebar_active, handleLogin: this.handleLogin });
     return (
       <div>
       <Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
-      <div className='app-container'>
-      <SidebarMenu handleLogin={this.handleLogin} active={this.state.sidebar_active} />
-      <div className={this.state.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
-      //todo
-      </div>
+      {clonedChildren}
       </div>
     );
   }
 }
 
+//<Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
+//<div className='app-container'>
+//<SidebarMenu handleLogin={this.handleLogin} active={this.state.sidebar_active} />
+//<div className={this.state.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
+      //todo
+//</div>
 export default CSSModules( App, styles )

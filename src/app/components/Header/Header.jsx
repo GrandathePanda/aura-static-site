@@ -2,19 +2,20 @@ import React from 'react';
 import styles from './Header.scss';
 import CSSModules from 'react-css-modules';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link } from 'react-router';
 
 class Header extends React.Component {
   render (props) {
     return (
       <div className="header">
-      <p className="logo">Aura</p>
+      <Link to={'/'} className="logo">Aura</Link>
       <div className="links-container">
       <ReactCSSTransitionGroup transitionName = "header-fade"
       transitionAppear = {true} transitionAppearTimeout = {500}
       transitionEnter = {false} transitionLeave = {false}>
-      <p className="links">A B O U T</p>
-      <p className="links">F A Q</p>
-      <p className="links">S U P P O R T</p>
+      <Link to={'/about'} className="links">A B O U T</Link>
+      <Link to={'/faq'} className="links">F A Q</Link>
+      <Link to={'/support'} className="links">S U P P O R T</Link>
       <p className="links" onClick={ this.props.sidebar_active ? this.props.toggleSidebar.bind(null, false) : this.props.toggleSidebar.bind(null, true) }>profile_img</p>
       </ReactCSSTransitionGroup>
       </div>
