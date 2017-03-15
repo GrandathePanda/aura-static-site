@@ -28,10 +28,11 @@ class App extends Component {
   }
 
   render(props) {
+    var clonedChildren = React.cloneElement(this.props.children, {sidebar_active: this.state.sidebar_active, handleLogin: this.handleLogin });
     return (
       <div>
       <Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
-      {this.props.children}
+      {clonedChildren}
       </div>
     );
   }

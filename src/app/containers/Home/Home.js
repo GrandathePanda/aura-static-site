@@ -9,17 +9,10 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sidebar_active: false,
       loggedIn: false
     };
 
-    this.toggleSidebar = this.toggleSidebar.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
-  }
-
-  toggleSidebar ( bool ) {
-    //manages the state of the side menu expanding
-    this.setState( { sidebar_active: bool } );
   }
 
   handleLogin () {
@@ -31,8 +24,8 @@ class Home extends Component {
     return (
       <div>
       <div className='app-container'>
-      <SidebarMenu handleLogin={this.handleLogin} active={this.state.sidebar_active} />
-      <div className={this.state.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
+      <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
+      <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
       </div>
       </div>
     );
