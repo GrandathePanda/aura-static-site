@@ -10,7 +10,12 @@ var config = {
 	output: {
 		path: BUILD_DIR,
 		filename: 'bundle.js'
-	},
+  },
+  devServer: {
+    inline: true,
+    contentBase: BUILD_DIR,
+    port: 8100
+  },
 	resolve : {
 		extensions: ['', '.js', '.jsx']
 	},

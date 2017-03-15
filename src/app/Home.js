@@ -4,7 +4,7 @@ import SidebarMenu from './components/SidebarMenu/SidebarMenu.jsx';
 import styles from './Home.scss';
 import CSSModules from 'react-css-modules';
 
-class App extends Component {
+class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -30,6 +30,7 @@ class App extends Component {
   render(props) {
     return (
       <div>
+      {this.props.children}
       </div>
     );
   }
@@ -41,4 +42,4 @@ class App extends Component {
 //<div className={this.state.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
       //todo
 //</div>
-export default CSSModules( App, styles )
+export default CSSModules( Home, styles )
