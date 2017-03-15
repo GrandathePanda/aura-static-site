@@ -44,23 +44,18 @@ var config = {
 					]
 			}
 		],
-		rules: [{
-			test: /\.scss$/,
-			use: [{
-				loader: "style-loader"
-			}, {
-				loader: "css-loader"
-			}, {
-				loader: "sass-loader",
-				options: {
-					includePaths: [path.resolve(__dirname, 'src/app/components/Header.scss')]
-				}
-			}]
-		}]
-	},
-	plugins: [
-		new ExtractTextPlugin('public/style.css')
-	]
+    rules:
+    [
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //resolve-url-loader may be chained before sass-loader if necessary
+          use: ['css-loader', 'sass-loader']
+        })
+      }
+    ]
+  }
 };
 
 module.exports = config;
