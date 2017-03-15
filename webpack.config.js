@@ -58,9 +58,6 @@ var config = {
 			}]
 		}]
 	},
-	plugins: [
-		new ExtractTextPlugin('public/style.css')
-	]
 };
 
 module.exports = config;
