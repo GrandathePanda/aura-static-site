@@ -10,15 +10,18 @@ class Chatbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      data: [{message:[]}],
     }
 
     this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
   }
+  componentDidMount() {
+    setInterval(()=>{this.setState({ data: this.props.data});},2000);
+  }
 
   handleMessageSubmit (e) {
     //redux
-    this.state.data.push(e);
+    data.push(e);
   }
 
   render(props) {

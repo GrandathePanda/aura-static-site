@@ -4,6 +4,18 @@ import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
 import Chatbox from '../../components/Chatbox/Chatbox.jsx';
 import styles from './Home.scss';
 import CSSModules from 'react-css-modules';
+var data = [
+    {
+        "id": 1388534400000,
+        "author": "Pete Hunt",
+        "text": "Hey there!"
+    },
+    {
+        "id": 1420070400000,
+        "author": "Paul O’Shannessy",
+        "text": "React is *great*!"
+    },
+]
 
 class Home extends Component {
 
@@ -28,7 +40,7 @@ class Home extends Component {
       <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
       <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }>
       <p>Welcome to Aura</p>
-      <Chatbox />
+      <Chatbox data={data}/>
       </div>
       </div>
       </div>
