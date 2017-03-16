@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header.jsx';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
+import Chatbox from '../../components/Chatbox/Chatbox.jsx';
 import styles from './Home.scss';
 import CSSModules from 'react-css-modules';
 
@@ -25,7 +26,10 @@ class Home extends Component {
       <div>
       <div className='app-container'>
       <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
-      <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
+      <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }>
+      <p>Welcome to Aura</p>
+      <Chatbox />
+      </div>
       </div>
       </div>
     );
