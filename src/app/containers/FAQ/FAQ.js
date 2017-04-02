@@ -22,7 +22,12 @@ class FAQ extends Component {
 
   render(props) {
     return (
-      <div>
+      <div id="faq" className="page-container">
+        <div className="section-container">
+          <p className="section-title">Meet the Team</p>
+          <div className="body-copy">
+          </div>
+        </div>
       </div>
     );
   }

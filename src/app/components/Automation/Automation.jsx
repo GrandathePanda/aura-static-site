@@ -5,11 +5,11 @@ import CSSModules from 'react-css-modules';
 class Automation extends Component {
 	render(props) {
 		return (
-			<div>
+      <div>
 				<div className="automation-command">
 					<p className="title">{this.props.name}</p>
 					<div className="controls">
-						<img className="edit"  role="presentation" src={require("../../../assets/edit_B.png")}></img>
+						<img className="edit"  role="presentation" src={require("../../../assets/edit.svg")}></img>
 						<img className="delete" role="presentation" src={require("../../../assets/close.png")}></img>
 					</div>
 				</div>

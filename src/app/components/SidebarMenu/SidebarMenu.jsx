@@ -41,13 +41,18 @@ class SidebarMenu extends Component {
   }
 
   render(props) {
+
     return (
       <div className={ this.props.active ? 'side-container active' : 'side-container' } >
+      <div>
       <Profile active={this.state.profile_active} />
-      <SideHeader active={this.state.toggleLogin} toggleLogin={this.toggleLogin} animate={true} />
-      <Login active={this.state.toggleLogin} />
-      <Signup active={!this.state.toggleLogin} />
-      <p className={this.state.toggleLogin ? "footer-links" : "footer-links adjust"}><span className="link">Privacy</span> / <span className="link">Terms</span> / piBrain © {new Date().getFullYear()} </p>
+      </div>
+      <SideHeader active={(this.state.profile_active == false)} toggleLogin={this.toggleLogin} animate={true} />
+      <Login active={(this.state.toggleLogin && this.state.profile_active == false )} />
+      <Signup active={(!this.state.toggleLogin && this.state.profile_active == false)} />
+      <p className={this.state.toggleLogin ? "footer-links adjust" : "footer-links"}>
+      <span className="link">Privacy</span> / <span className="link">Terms</span> / piBrain © {new Date().getFullYear()}
+      </p>
       </div>
     );
   }
