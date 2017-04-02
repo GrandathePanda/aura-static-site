@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../../components/Header/Header.jsx';
-import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
 import styles from './About.scss';
 import CSSModules from 'react-css-modules';
+import Particles from 'react-particles-js';
 
 class About extends Component {
 
@@ -14,9 +13,50 @@ class About extends Component {
   }
 
   render(props) {
+    const YouTubeVideo = ({ id }) => (
+      <div className="youtube-wrapper">
+        <div className="youtube">
+          <center>
+              <iframe
+                  className="youtube-frame"
+                  src={`https://www.youtube.com/embed/${id}?autoplay=0`}
+                  allowFullScreen
+              />
+          </center>
+        </div>
+      </div>
+    );
     return (
       <div id="about" className="page-container">
-        <div className="tray-wrapper">
+      <Particles className="particle-canvas" width={'100%'} height={'100%;'} params={{
+        particles: {
+          number: {
+            value: 125,
+            enable: true,
+            value_area:800
+          },
+          color: {
+            value: '#000000'
+          },
+          opacity: {
+              value: 1
+          },
+          shape: {
+            polygon: {
+              nb_sides: 12
+            }
+          },
+          line_linked: {
+            enable: true,
+            color: "#000000",
+          },
+          move: {
+            enable: true,
+            speed: 1.3
+          }
+        }
+      }} />
+      <div className="tray-wrapper">
           <div className="page-header">
             <p>Why Use Aura?</p>
           </div>
@@ -44,6 +84,7 @@ class About extends Component {
             </div>
             <div className="center-container">
               <p className="title">Now You Have More Than Two Hands</p>
+              <YouTubeVideo id={"gfjMe5jVsYI"} />
             </div>
           </div>
         </div>
