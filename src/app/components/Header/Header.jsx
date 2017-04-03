@@ -15,7 +15,7 @@ class Header extends React.Component {
       transitionEnter = {false} transitionLeave = {false}>
       <Link to={'/about'} className="links">A B O U T</Link>
       <Link to={'/faq'} className="links">F A Q</Link>
-      <Link to={'/support'} className="links">S U P P O R T</Link>
+      <Link to={'/contact'} className="links">C O N T A C T</Link>
       <p className="links" onClick={ this.props.sidebar_active ? this.props.toggleSidebar.bind(null, false) : this.props.toggleSidebar.bind(null, true) }>profile_img</p>
       </ReactCSSTransitionGroup>
       </div>

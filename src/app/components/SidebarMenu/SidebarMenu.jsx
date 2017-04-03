@@ -47,7 +47,7 @@ class SidebarMenu extends Component {
       <div>
       <Profile active={this.state.profile_active} />
       </div>
-      <SideHeader active={(this.state.profile_active == false)} toggleLogin={this.toggleLogin} animate={true} />
+      <SideHeader active={(this.state.profile_active == false)} active={this.state.toggleLogin} toggleLogin={this.toggleLogin} animate={true} />
       <Login active={(this.state.toggleLogin && this.state.profile_active == false )} />
       <Signup active={(!this.state.toggleLogin && this.state.profile_active == false)} />
       <p className={this.state.toggleLogin ? "footer-links adjust" : "footer-links"}>

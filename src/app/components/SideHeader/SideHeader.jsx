@@ -16,7 +16,7 @@ class SideHeader extends Component {
       <ReactCSSTransitionGroup transitionName = "side-header"
         transitionAppear = {this.props.active} transitionAppearTimeout = {500}
         transitionEnter = {false} transitionLeave = {false}>
-      <div className={this.props.active ? "header-container active" : "header-container" }>
+      <div className={"header-container active"}>
         <p key="new" className="login-header">
         <span className={this.props.active ? "login active" : "login"} onClick={ () => this.props.toggleLogin(true)}>Login</span>|
         <span className={this.props.active ? "signup" : "signup active"} onClick={ () => this.props.toggleLogin(false)}>Register</span>

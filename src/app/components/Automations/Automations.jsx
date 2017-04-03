@@ -22,7 +22,7 @@ class Automations extends Component {
 
   render(props) {
     const AutomationsList = ({automations}) => (
-      <div id={"automations"} className="automation-container">
+      <div id={"automations"} className="automation-wrapper">
       <StaggeredMotion
       defaultStyles={ Array.from(automations, () => { return { h:0 }; })}
       styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {

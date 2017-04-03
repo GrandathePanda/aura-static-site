@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Header from '../../components/Header/Header.jsx';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
-import styles from './Support.scss';
+import styles from './Contact.scss';
 import CSSModules from 'react-css-modules';
 
-class Support extends Component {
+class Contact extends Component {
 
   constructor(props) {
     super(props);
@@ -22,4 +21,4 @@ class Support extends Component {
   }
 }
 
-export default CSSModules( Support, styles )
+export default CSSModules( Contact, styles )

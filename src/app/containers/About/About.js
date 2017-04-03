@@ -28,7 +28,7 @@ class About extends Component {
     );
     return (
       <div id="about" className="page-container">
-      <Particles className="particle-canvas" width={'100%'} height={'100%;'} params={{
+      <Particles className="particle-canvas" width={'100%'} height={'125vh'} params={{
         particles: {
           number: {
             value: 125,
