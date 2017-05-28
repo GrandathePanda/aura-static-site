@@ -142,15 +142,15 @@ class Contact extends Component {
           <div className="contact-row">
             <div className="contact-info press">
               <p className="contact-title">PRESS</p>
-              <p className"info-text">Are you a member of the press? Contact us here. </p>
+              <p className="info-text">Are you a member of the press? Contact us <a className="contact-link" href={"mailto:" + this.props.contactEmail}>here</a>. </p>
             </div>
             <div className="contact-info jobs">
               <p className="contact-title">JOIN US</p>
-              <p className="info-text">Want to join the team? We would love to have you! Unfortunately, we do not have any open positions at the moment...</p>
+              <p className="info-text">Want to join the team? We would love to have you! But unfortunately, we do not have any open positions at the moment...</p>
             </div>
             <div className="contact-info misc">
               <p className="contact-title">STILL HAVE QUESTIONS?</p>
-              <p className="info-text">Shoot us an email at: dev@pibrain.io</p>
+              <p className="info-text">Shoot us an email at: <a className="contact-link" href="mailto:dev@pibrain.io">dev@pibrain.io</a></p>
             </div>
           </div>
         </div>
