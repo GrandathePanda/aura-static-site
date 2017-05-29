@@ -5,6 +5,7 @@ import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
 import Chatbox from '../../components/Chatbox/Chatbox.jsx';
 import styles from './Home.scss';
 import CSSModules from 'react-css-modules';
+import Particles from 'react-particles-js';
 var data = [
     {
         "id": 1388534400000,
@@ -40,8 +41,38 @@ class Home extends Component {
         <div className='app-container'>
           <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
           <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }>
-          <p>Welcome to Aura</p>
-          <Hero data={data} />
+          <p className="wc-title">Welcome to Aura</p>
+          <Particles className="particle-canvas" width={'100%'} height={'125vh'} params={{
+        particles: {
+          number: {
+            value: 400,
+            enable: false,
+            value_area:800
+          },
+          color: {
+            value: '#000000'
+          },
+          opacity: {
+              value: 1
+          },
+          shape: {
+            polygon: {
+              nb_sides: 12
+            }
+          },
+          line_linked: {
+            enable: true,
+            color: "#000000",
+          },
+          move: {
+            enable: true,
+              speed: 1.3,
+              direction: 'top-right',
+              mode: 'out'
+          }
+        }
+      }} />
+<Hero data={data} />
           </div>
         </div>
       </div>
