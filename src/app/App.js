@@ -3,6 +3,8 @@ import Header from './components/Header/Header.jsx';
 import SidebarMenu from './components/SidebarMenu/SidebarMenu.jsx';
 import styles from './App.scss';
 import CSSModules from 'react-css-modules';
+import { Provider } from 'react-redux';
+import store from './store.js';
 
 class App extends Component {
 
@@ -30,10 +32,12 @@ class App extends Component {
   render(props) {
     var clonedChildren = React.cloneElement(this.props.children, {sidebar_active: this.state.sidebar_active, handleLogin: this.handleLogin });
     return (
+			<Provider store= { store } >
       <div>
       <Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
       {clonedChildren}
       </div>
+			</Provider>
     );
   }
 }
