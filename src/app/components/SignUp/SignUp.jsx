@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import styles from './Signup.scss';
+import styles from './SignUp.scss';
 import InputField from '../InputField/InputField.jsx';
 import Dropdown from '../Dropdown/Dropdown.jsx';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import CSSModules from 'react-css-modules';
 
-class Signup extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = { first_name: "", last_name: "", email:"", password: "", bd_month: "", bd_day: "", bd_year: "", gender: "", location: "" };
@@ -425,5 +425,5 @@ class Signup extends Component {
     );
   }
 }
-export default CSSModules(Signup, styles);
+export default CSSModules(SignUp, styles);
 

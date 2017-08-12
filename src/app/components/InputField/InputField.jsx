@@ -12,13 +12,14 @@ class InputField extends Component {
 			errorMessag: "This text is invalid",
 			errorVisible: false
 		};
+    this.handleChanges = this.handleChanges.bind(this)
 	}
 
 	handleChanges( event ) {
 		this.validate( event.target.value );
 
 		if ( this.props.onChange ) {
-			this.props.OnChange( event );
+			this.props.onChange( event );
 		}
 
 	}

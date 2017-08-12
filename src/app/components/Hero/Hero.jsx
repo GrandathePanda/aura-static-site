@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Hero.scss';
 import InputField from '../InputField/InputField.jsx';
-import NewsletterForm from './NewsletterForm/NewsletterForm.jsx';
+import ConnectedNewsletterForm from './NewsletterForm/ConnectedNewsletterForm.jsx';
 import CSSModules from 'react-css-modules';
 
 
@@ -21,7 +21,7 @@ render(props) {
           <span className="byline">Get updates about the development and release of Aura. Sign-up to receive updates about the development, release and milestones for Aura.</span>
       </p>
       <div>
-      <NewsletterForm />
+      <ConnectedNewsletterForm />
       </div>
       </div>
     </div>

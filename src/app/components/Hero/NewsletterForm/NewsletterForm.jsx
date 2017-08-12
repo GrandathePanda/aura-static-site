@@ -22,19 +22,7 @@ class NewsletterForm extends Component {
   }
 
   handleSubmit( newsletter ) {
-		let { dispatch } = this.props;
-    //e.preventDefault();
-    //var email = this.state.email.trim();
-    //var name = this.state.name;
-    //if (!email || !name) {
-    //  return;
-    //}
-
-    //this.props.onSubmit({email: email, name: name });
-    //this.setState({
-    //  email: '',
-    //  name: ''
-    //});
+    newsletter.newsletterSignUp
   }
 
   validateEmail(value) {
@@ -47,24 +35,40 @@ class NewsletterForm extends Component {
 		let newsletter = this.props;
 
     return (
-      <Form model="newsletter" className="newsletter-form">
+      <Form model="newsletter" className="newsletter-form" onSubmit={this.handleSubmit.bind(this, newsletter)}>
           <Field model="user.firstName">
               <InputField
                 type={"text"}
                 className={"input name"}
                 value={this.state.name}
                 uniqueName="name_field"
-                text="Full Name"
+                text="First Name"
                 textArea={false}
                 required={true}
-                minCharacters={6}
+                minCharacters={2}
                 validate={this.commonValidate}
-                onChange={this.setValue.bind(this, 'name')}
-                errorMessage="Your name is a required field"
-                emptyMessage="Your name is a required field" />
+                onChange={this.setValue.bind(this, 'firstName')}
+                errorMessage="Whoops! Something went wrong. (Min characters 2)"
+                emptyMessage="Your first name is a required field" />
           </Field>
           <br></br>
-          <Field model="user.firstName">
+          <Field model="user.lastName">
+              <InputField
+                type={"text"}
+                className={"input name"}
+                value={this.state.name}
+                uniqueName="name_field"
+                text="Last Name"
+                textArea={false}
+                required={true}
+                minCharacters={2}
+                validate={this.commonValidate}
+                onChange={this.setValue.bind(this, 'lastName')}
+                errorMessage="Whoops! Something went wrong. (Min characters 2)"
+                emptyMessage="Your last name is a required field" />
+          </Field>
+          <br></br>
+          <Field model="user.email">
               <InputField
                 type={"text"}
                 className={"input email"}
@@ -73,14 +77,30 @@ class NewsletterForm extends Component {
                 text="Email Addresss"
                 textArea={false}
                 required={true}
-                minCharacters={6}
+                minCharacters={11}
                 validate={this.validateEmail()}
                 onChange={this.setValue.bind(this, 'email')}
-                errorMessage="Your email is a required field"
+                errorMessage="Please check that this is a valid email. (Min characters 11)"
                 emptyMessage="Your email is a required field" />
           </Field>
           <br></br>
-          <button className="submit-btn" type="submit" value="Submit"></button>
+          <Field model="user.organization">
+              <InputField
+                type={"text"}
+                className={"input organization"}
+                value={this.state.name}
+                uniqueName="name_field"
+                text="Organization (Optional)"
+                textArea={false}
+                required={false}
+                minCharacters={2}
+                validate={this.commonValidate}
+                onChange={this.setValue.bind(this, 'organization')}
+                errorMessage="Whoops! Something went wrong. (Min characters 2)"
+                emptyMessage=""/>
+          </Field>
+          <br></br>
+          <button className="submit-btn" type="submit" value="Submit">Sign Up!</button>
         </Form>
     );
   }

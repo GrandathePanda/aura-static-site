@@ -41,7 +41,7 @@ class Home extends Component {
         <div className='app-container'>
           <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
           <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }>
-          <p className="wc-title">Welcome to Aura</p>
+          <p className="wc-title">Welcome to piBrain</p>
           <Particles className="particle-canvas" width={'100%'} height={'125vh'} params={{
         particles: {
           number: {
