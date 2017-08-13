@@ -9,20 +9,28 @@ import gql from 'graphql-tag'
 import NewsletterForm from './NewsletterForm'
 
 const signUp = gql`
-  mutation($firstName: String!, $lastName: String!,  $email: String!) {
-    newsletterSignUp(firstName: $firstName, lastName: $lastName, email: $email, url: "https://pibrain.io/signups/") {
-      jsonResponse
+  mutation($firstName: String!, $lastName: String!,  $email: String!, $organization: String) {
+    newsletterSignUp(
+      firstName: $firstName,
+      lastName: $lastName,
+      email: $email,
+      organization: $organization,
+      url: "https://pibrain.io/signups/")
+      {
+        jsonResponse
     }
-  } 
+  }
 
 `
 const newsletterSignUp = graphql(signUp, {
   props: ({ mutate }) => ({
-    newsletterSignUp: ( { firstName, lastName, email } ) => {
+    newsletterSignUp: ( { firstName, lastName, email, organization } ) => {
       return mutate({
         variables: {
-          name,
-          email
+          firstName,
+          lastName,
+          email,
+          organization,
         },
       })
     }

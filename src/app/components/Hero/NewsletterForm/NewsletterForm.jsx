@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './NewsletterForm.scss';
 import CSSModules from 'react-css-modules';
 import { connect } from 'react-redux';
-import { Field, Form, Control, actions } from 'react-redux-form';
+import { Errors, Field, Form, Control, actions } from 'react-redux-form';
 
 const isEmail = (value) => {
   //email regex
@@ -12,36 +12,52 @@ const isEmail = (value) => {
 
 const isRequired = (value) => ( value.length > 0 ? true : false )
 
-const isLongEnough = (minLength, value) => ( value.length >= minLength ? true : false )
+const isLongEnough = (minLength, value) => { 
+  console.log(minLength, value);
+  const yup = value.length >= minLength ? true : false
+  return yup
+}
 
 const newsletterFields = [
-  { model: 'newsletter.firstName',
-    text: 'First Name',
-    validators: { required: isRequired, length: isLongEnough.bind(null, 2) },
-    uniqueName: 'newsletter-input-firstname',
-    errorMessage: "Whoops! Something went wrong. (Min characters 2)",
-    emptyMessage: "Your first name is a required field." },
-
-  { model: 'newsletter.lastName',
-    text: 'Last Name',
-    validators: { required: isRequired, length: isLongEnough.bind(null, 2) },
-    uniqueName: 'newsletter-input-lastname',
-    errorMessage: "Whoops! Something went wrong. (Min characters 2)",
-    emptyMessage: "Your last name is a required field." },
-
-  { text: 'Email',
-    model: 'newsletter.email',
-    validators: { required: isRequired, email: isEmail, length: isLongEnough.bind(null, 11) },
-    uniqueName: 'newsletter-input-email',
-    errorMessage: "Please check that this is a valid email. (Min characters 11)",
-    emptyMessage: "Your email is a required field.", },
-
-  { text: 'Organization (Optional)',
-    model: 'newsletter.organization',
-    validators: { length: isLongEnough.bind(null, 2) },
-    uniqueName: 'newsletter-input-organization',
-    errorMessage: "Whoops! Something went wrong. (Min characters 2)",
-    emptyMessage: "" },
+  { errorAttribs: {
+      length: "Minimum length is 2.",
+      required: "Your first name is a required field.",
+    },
+    fieldAttribs: {
+      model: 'newsletter.firstName',
+      placeholder: 'First Name',
+      validators: { required: isRequired, length: isLongEnough.bind(null, 2) },
+    },
+    uniqueName: 'newsletter-input-firstname', },
+  { errorAttribs: {
+      length: "Minimum length is 2.",
+      required: "Your last name is a required field.",
+    },
+    fieldAttribs: {
+      model: 'newsletter.lastName',
+      placeholder: 'Last Name',
+      validators: { required: isRequired, length: isLongEnough.bind(null, 2) },
+    },
+    uniqueName: 'newsletter-input-lastname', },
+  { errorAttribs: {
+      email: "Please check that this is a valid email.",
+      length: "Minium length is 11.",
+      required: "Your email is a required field.",
+    },
+    fieldAttribs: {
+      model: 'newsletter.email',
+      placeholder: 'Email',
+      validators: { required: isRequired, email: isEmail, length: isLongEnough.bind(null, 11) },
+    },
+    uniqueName: 'newsletter-input-email', },
+  { errorAttribs: {
+    },
+    fieldAttribs: {
+      model: 'newsletter.organization',
+      placeholder: 'Organization (Optional)',
+      validators: { length: isLongEnough.bind(null, 2) },
+    },
+    uniqueName: 'newsletter-input-organization',},
 ]
 
 
@@ -58,13 +74,18 @@ class NewsletterForm extends Component {
 
   inputFields() {
     const constructInputField = (props) => (<InputField {...props}/>)
-
     return newsletterFields.map((fields) => {
       return (<div key={fields.uniqueName}>
         <Control.text
-          {...fields}
+          {...fields.fieldAttribs}
           updateOn='change'
           validateOn='blur'
+        />
+        <Errors
+          model={fields.fieldAttribs.model}
+          messages={fields.errorAttribs}
+          component='li'
+          show={{touched: true, focused: true}}
         />
         <br></br>
       </div>)
@@ -73,8 +94,7 @@ class NewsletterForm extends Component {
 
 
   render(props) {
-		let newsletter = this.props;
-    console.log(this.inputFields())
+    let newsletter = this.props;
     return (
       <Form model="newsletter" className="newsletter-form" onSubmit={this.handleSubmit.bind(this, newsletter)}>
           {this.inputFields()}

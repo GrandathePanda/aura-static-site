@@ -4,20 +4,18 @@ import {
   applyMiddleware
 } from 'redux';
 import {
-  modelReducer,
-  formReducer
+  combineForms,
 } from 'react-redux-form';
+import { newsletterFormReducer, newsletterModelReducer } from './reducer/newsletterFormReducer'
 import thunk from 'redux-thunk';
 
-const initialNewsletterState = {
-  firstName: '',
-  lastName: '',
-	email: ''
-};
+const combinedReducers = combineReducers({
+  newsletterForm: newsletterFormReducer,
+  newsletter: newsletterModelReducer
+})
 
-const store = applyMiddleware(thunk)(createStore)(combineReducers({
-  newsletter: modelReducer('newsletter', initialNewsletterState),
-  newsletterForm: formReducer('newsletter', initialNewsletterState)
-}));
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(combinedReducers, /* preloadedState, */ composeEnhancers(
+    applyMiddleware(thunk)
+));
 export default store;

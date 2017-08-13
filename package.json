@@ -54,7 +54,7 @@
     "shallow-compare": "^1.2.1",
     "thunk": "^0.0.1",
     "thunks": "^4.7.5",
-    "webpack": "2.1.0-beta.22"
+    "webpack": "^3.5.4"
   },
   "scripts": {
     "start": "webpack-dev-server -d --inline --hot --colors --progress",

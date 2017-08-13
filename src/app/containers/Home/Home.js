@@ -6,18 +6,6 @@ import Chatbox from '../../components/Chatbox/Chatbox.jsx';
 import styles from './Home.scss';
 import CSSModules from 'react-css-modules';
 import Particles from 'react-particles-js';
-var data = [
-    {
-        "id": 1388534400000,
-        "author": "Pete Hunt",
-        "text": "Hey there!"
-    },
-    {
-        "id": 1420070400000,
-        "author": "Paul O’Shannessy",
-        "text": "React is *great*!"
-    },
-]
 
 class Home extends Component {
 
@@ -72,7 +60,7 @@ class Home extends Component {
           }
         }
       }} />
-<Hero data={data} />
+            <Hero />
           </div>
         </div>
       </div>
