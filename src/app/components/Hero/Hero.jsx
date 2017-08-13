@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './Hero.scss';
-import InputField from '../InputField/InputField.jsx';
 import ConnectedNewsletterForm from './NewsletterForm/ConnectedNewsletterForm.jsx';
 import CSSModules from 'react-css-modules';
 

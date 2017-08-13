@@ -1,20 +1,15 @@
 import { createStore, combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
+import newsletterFormReducer from './newsletterFormReducer'
 
 const rootReducer = combineReducers({
   // ...your other reducers here
   // you have to pass formReducer under 'form' key,
   // for custom keys look up the docs for 'getFormState'
-  form: formReducer
+  combinedForms,
 })
 
-const initialState = {
-  visibilityFilter: [],
-  todos: []
-}
+const combinedForms = combineForms({
+  newsletterFormReducer
+})
 
-function mockReducer(state = initialState, action) {
-  // For now, don't handle any actions
-  // and just return the state given to us.
-  return state
-}

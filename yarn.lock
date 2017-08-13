@@ -2777,7 +2777,7 @@ fb-watchman@^1.8.0, fb-watchman@^1.9.0:
   dependencies:
     bser "1.0.2"
 
-fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.9:
+fbjs@^0.8.4, fbjs@^0.8.9:
   version "0.8.9"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.9.tgz#180247fbd347dcc9004517b904f865400a0c8f14"
   dependencies:
@@ -5806,6 +5806,13 @@ react-addons-css-transition-group@^15.0.0, react-addons-css-transition-group@^15
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
+react-addons-shallow-compare@^15.6.0:
+  version "15.6.0"
+  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.0.tgz#b7a4e5ff9f2704c20cf686dd8a05dd08b26de252"
+  dependencies:
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
+
 react-apollo@^1.4.12:
   version "1.4.12"
   resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-1.4.12.tgz#0cacbdd335acec4c1079feb48047df1c43f77bdf"
@@ -5852,13 +5859,14 @@ react-dev-utils@^0.4.2:
     sockjs-client "1.0.3"
     strip-ansi "3.0.1"
 
-react-dom@^15.4.2:
-  version "15.4.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.2.tgz#015363f05b0a1fd52ae9efdd3a0060d90695208f"
+react-dom@^15.6.1:
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
-    fbjs "^0.8.1"
+    fbjs "^0.8.9"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
+    prop-types "^15.5.10"
 
 react-dropdown@^1.2.1:
   version "1.2.1"
@@ -5896,9 +5904,9 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-redux-form@^1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/react-redux-form/-/react-redux-form-1.13.0.tgz#f4976b15da2f24cf107cfb06665b0d8b3dd81b7e"
+react-redux-form@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/react-redux-form/-/react-redux-form-1.14.0.tgz#f229cfcd882f7fb0050415530f4abf4c8041e2cd"
   dependencies:
     icepick "^1.1.0"
     invariant "~2.2.1"
@@ -6456,7 +6464,7 @@ sha.js@^2.3.6:
   dependencies:
     inherits "^2.0.1"
 
-shallow-compare@1.2.1:
+shallow-compare@1.2.1, shallow-compare@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/shallow-compare/-/shallow-compare-1.2.1.tgz#6a42931a81f8ab52bfad229c14f1635e5488ba7a"
 
