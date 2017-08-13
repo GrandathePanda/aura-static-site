@@ -1,13 +1,15 @@
 import {
   createStore,
   combineReducers,
-  applyMiddleware
+  applyMiddleware,
+  compose
 } from 'redux';
 import {
   combineForms,
 } from 'react-redux-form';
 import { newsletterFormReducer, newsletterModelReducer } from './reducer/newsletterFormReducer'
 import thunk from 'redux-thunk';
+
 
 const combinedReducers = combineReducers({
   newsletterForm: newsletterFormReducer,

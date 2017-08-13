@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header.jsx';
+import About from '../../containers/About/About.js'
+import Contact from '../../containers/Contact/Contact.js'
 import Hero from '../../components/Hero/Hero.jsx';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
 import Chatbox from '../../components/Chatbox/Chatbox.jsx';
@@ -30,39 +32,11 @@ class Home extends Component {
           <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
           <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }>
           <p className="wc-title">Welcome to piBrain</p>
-          <Particles className="particle-canvas" width={'100%'} height={'125vh'} params={{
-        particles: {
-          number: {
-            value: 400,
-            enable: false,
-            value_area:800
-          },
-          color: {
-            value: '#000000'
-          },
-          opacity: {
-              value: 1
-          },
-          shape: {
-            polygon: {
-              nb_sides: 12
-            }
-          },
-          line_linked: {
-            enable: true,
-            color: "#000000",
-          },
-          move: {
-            enable: true,
-              speed: 1.3,
-              direction: 'top-right',
-              mode: 'out'
-          }
-        }
-      }} />
-            <Hero />
+          <Hero />
           </div>
         </div>
+        <About />
+        <Contact />
       </div>
     );
   }
