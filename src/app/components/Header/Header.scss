@@ -10,50 +10,58 @@ a {
 }
 
 .header {
-	position:absolute;
-	overflow: hidden;
-	top: 0;
-	z-index: 1000;
-	height: 64px;
-	width: 100%;
-	background: #222;
-	box-shadow:-9px -15px 12px 14px black;
-	.logo {
-		position: relative;
-		font-family: 'Bungee Hairline', cursive;
-		margin: 0 auto;
-		font-size: 52px;
-		text-align: left;
-		color:white;
-		left: 40px;
-		display:inline-block;
-		cursor:pointer;
-		background: transparent;
+  position:absolute;
+  overflow: hidden;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
+  width: 100%;
+  background: rgb(21,21,20);
+  box-shadow:-9px -15px 12px 14px black;
+  .logo {
+    position: relative;
+    font-family: 'Bungee Hairline', cursive;
+    margin: 0 auto;
+    font-size: 52px;
+    text-align: left;
+    color:white;
+    left: 40px;
+    display:inline-block;
+    cursor:pointer;
+    background: transparent;
 
-	}
+    .logo-c {
+      width: 64px;
+      height: 64px;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+  }
 
 }
 .links-container {
-	position: relative;
-	overflow: hidden;
-	float: right;
+  position: relative;
+  overflow: hidden;
+  float: right;
 
-	.links {
-		float: left;
+  .links {
+    float: left;
     font: italic 16px 'Raleway', sans-serif;
-		margin: 20px;
-		color: white;
-		cursor: pointer;
+    margin: 20px;
+    color: white;
+    cursor: pointer;
 
     &.profile { display:none; }
-	}
+  }
 }
 
 .header-fade-appear {
-   opacity: 0.01;
+  opacity: 0.01;
 }
 
 .header-fade-appear.header-fade-appear-active {
-   opacity: 1;
-   transition: opacity 500ms ease-in;
+  opacity: 1;
+  transition: opacity 500ms ease-in;
 }

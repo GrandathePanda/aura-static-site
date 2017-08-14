@@ -6,9 +6,17 @@ import { Link } from 'react-router';
 
 class Header extends React.Component {
   render (props) {
+
+    var logoPath = require("../../../assets/logo.png");
+
+    var imgStyle = [
+      {
+        backgroundImage: 'url(' + logoPath +')',
+      }
+    ];
     return (
       <div className="header">
-      <Link to={'/'} className="logo">Aura</Link>
+        <Link to={'/'} className="logo"><div className="logo-c" style={imgStyle[0]}></div> PiBrain</Link>
       <div className="links-container">
         {/*
       <ReactCSSTransitionGroup transitionName = "header-fade"
