@@ -90,11 +90,7 @@ class Contact extends Component {
         return (
           <div className="team-container">
             <div className="row">
-              {members[0]}
-              {members[1]}
-            </div>
-            <div className="row">
-              {members[2]}
+              {members}
             </div>
           </div>
         );

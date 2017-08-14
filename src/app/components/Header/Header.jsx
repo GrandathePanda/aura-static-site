@@ -10,6 +10,7 @@ class Header extends React.Component {
       <div className="header">
       <Link to={'/'} className="logo">Aura</Link>
       <div className="links-container">
+        {/*
       <ReactCSSTransitionGroup transitionName = "header-fade"
       transitionAppear = {true} transitionAppearTimeout = {500}
       transitionEnter = {false} transitionLeave = {false}>
@@ -18,6 +19,7 @@ class Header extends React.Component {
       <Link to={'/contact'} className="links">C O N T A C T</Link>
       <p className="links profile" onClick={ this.props.sidebar_active ? this.props.toggleSidebar.bind(null, false) : this.props.toggleSidebar.bind(null, true) }>profile_img</p>
       </ReactCSSTransitionGroup>
+            */}
       </div>
       </div>
 
