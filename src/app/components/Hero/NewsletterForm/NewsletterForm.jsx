@@ -13,10 +13,8 @@ const isEmail = (value) => {
 
 const isRequired = (value) => ( value.length > 0 ? true : false )
 
-const isLongEnough = (minLength, value) => { 
-  console.log(minLength, value);
-  const yup = value.length >= minLength ? true : false
-  return yup
+const isLongEnough = (minLength, value) => {
+  return value.length >= minLength ? true : false
 }
 
 const newsletterFields = [
@@ -69,8 +67,15 @@ class NewsletterForm extends Component {
     super(props);
   }
 
-  handleSubmit( newsletter ) {
-    newsletter.newsletterSignUp()
+  async handleSubmit( newsletter, values ) {
+    try {
+      const params = { ...values, url: `${window.location.href.match(/^.*\//)[0]}signups` }
+      const res = await newsletter.newsletterSignUp(params)
+      return res
+    } catch(e) {
+      console.error(e)
+      return e.message
+    }
   }
 
   inputFields() {
@@ -85,8 +90,7 @@ class NewsletterForm extends Component {
         <Errors
           model={fields.fieldAttribs.model}
           messages={fields.errorAttribs}
-          component='li'
-          show={{touched: true, focused: true}}
+          show='touched'
         />
         <br></br>
       </div>)
@@ -97,10 +101,10 @@ class NewsletterForm extends Component {
   render(props) {
     let newsletter = this.props;
     return (
-      <Form model="newsletter" className="newsletter-form" onSubmit={this.handleSubmit.bind(this, newsletter)}>
+      <Form model="newsletter" className="newsletter-form" onSubmit={(values) => this.handleSubmit(newsletter, values)}>
           {this.inputFields()}
           <button className="submit-btn" type="submit" value="Submit">Sign Up!</button>
-        </Form>
+      </Form>
     );
   }
 }

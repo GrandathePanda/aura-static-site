@@ -4,7 +4,11 @@ import SidebarMenu from './components/SidebarMenu/SidebarMenu.jsx';
 import styles from './App.scss';
 import CSSModules from 'react-css-modules';
 import { Provider } from 'react-redux';
-import store from './store.js';
+import { apolloClient, store } from './store.js';
+import Home from './containers/Home/Home.js';
+import ConnectedSignUps from './containers/SignUps/ConnectedSignUps.js';
+import { Switch, Route } from 'react-router-dom'
+import { ApolloProvider } from 'react-apollo'
 
 class App extends Component {
 
@@ -28,16 +32,17 @@ class App extends Component {
     //manages the state of login validation from the server should go here
     this.setState( { loggedIn: true } );
   }
-
   render(props) {
-    var clonedChildren = React.cloneElement(this.props.children, {sidebar_active: this.state.sidebar_active, handleLogin: this.handleLogin });
     return (
-			<Provider store= { store } >
+			<ApolloProvider store= { store } client = { apolloClient } >
       <div>
-      <Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
-      {clonedChildren}
+        <Header sidebar_active={this.state.sidebar_active} toggleSidebar={this.toggleSidebar} />
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path="/signups" component={ConnectedSignUps} />
+        </Switch>
       </div>
-			</Provider>
+			</ApolloProvider>
     );
   }
 }

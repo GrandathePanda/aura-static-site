@@ -9,27 +9,26 @@ import gql from 'graphql-tag'
 import NewsletterForm from './NewsletterForm'
 
 const signUp = gql`
-  mutation($firstName: String!, $lastName: String!,  $email: String!, $organization: String) {
+  mutation($firstName: String!, $lastName: String!,  $email: String!, $url: String!, $organization: String) {
     newsletterSignUp(
       firstName: $firstName,
       lastName: $lastName,
       email: $email,
       organization: $organization,
-      url: "https://pibrain.io/signups/")
-      {
-        jsonResponse
-    }
+      url: $url
+    )
   }
-
 `
 const newsletterSignUp = graphql(signUp, {
-  props: ({ mutate }) => ({
-    newsletterSignUp: ( { firstName, lastName, email, organization } ) => {
-      return mutate({
+  name: 'newsletterSignUp',
+  props: ({ newsletterSignUp }) => ({
+    newsletterSignUp: ( { firstName, lastName, email, url, organization } ) => {
+      return newsletterSignUp({
         variables: {
           firstName,
           lastName,
           email,
+          url,
           organization,
         },
       })
@@ -41,9 +40,7 @@ const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
-    {
-      newsletterSignUp,
-    },
+    { },
     dispatch
   )
 }
@@ -51,6 +48,7 @@ const mapDispatchToProps = (dispatch) => {
 
 export default compose(
   connect( mapStateToProps, mapDispatchToProps ),
+  newsletterSignUp,
 )(NewsletterForm)
 
 

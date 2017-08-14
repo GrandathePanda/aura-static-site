@@ -9,15 +9,21 @@ import {
 } from 'react-redux-form';
 import { newsletterFormReducer, newsletterModelReducer } from './reducer/newsletterFormReducer'
 import thunk from 'redux-thunk';
-
+import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import { apiUrl } from 'configVars'
+const networkInterface = createNetworkInterface({ uri: `${apiUrl}/graphql` })
+const apolloClient = new ApolloClient({
+  networkInterface
+})
 
 const combinedReducers = combineReducers({
   newsletterForm: newsletterFormReducer,
-  newsletter: newsletterModelReducer
+  newsletter: newsletterModelReducer,
+  apollo: apolloClient.reducer(),
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(combinedReducers, /* preloadedState, */ composeEnhancers(
     applyMiddleware(thunk)
 ));
-export default store;
+export { store, apolloClient }

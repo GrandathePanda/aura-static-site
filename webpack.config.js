@@ -1,12 +1,15 @@
 var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const configVars = JSON.stringify(require('./config')())
 var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
 	entry: APP_DIR + '/index.js',
+  externals: {
+    configVars
+  },
 	output: {
 		path: BUILD_DIR,
 		filename: 'bundle.js'
@@ -14,7 +17,8 @@ var config = {
   devServer: {
     inline: true,
     contentBase: BUILD_DIR,
-    port: 8100
+    port: 8100,
+    historyApiFallback: true
   },
 	resolve : {
 		extensions: ['', '.js', '.jsx']
@@ -22,20 +26,15 @@ var config = {
 	module : {
 		loaders : [
 			{
-				test : /\.jsx?/,
-				exclude: /node_modules/,
-				include : APP_DIR,
-				loader : 'babel',
-				query:
-				{
-					presets:['react', 'es2015']
-				}
-			},
-			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				include: APP_DIR,
-				loader: "babel-loader"
+				loader: "babel-loader",
+        babelrc: false,
+        query: {
+          presets: ['es2015', 'react', 'stage-2'],
+          plugins: ['transform-runtime']
+        }
 			},
 			{
 				test: /\.scss$/,

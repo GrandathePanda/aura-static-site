@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.scss';
 import CSSModules from 'react-css-modules';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
 
