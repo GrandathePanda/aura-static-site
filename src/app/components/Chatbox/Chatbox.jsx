@@ -21,7 +21,7 @@ class Chatbox extends Component {
 
   handleMessageSubmit (e) {
     //redux
-    data.push(e);
+    // data.push(e);
   }
 
   render(props) {

@@ -3,6 +3,7 @@ import styles from './NewsletterForm.scss';
 import CSSModules from 'react-css-modules';
 import { connect } from 'react-redux';
 import { Errors, Field, Form, Control, actions } from 'react-redux-form';
+import InputField from '../../InputField/InputField.jsx';
 
 const isEmail = (value) => {
   //email regex
