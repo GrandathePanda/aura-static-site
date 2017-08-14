@@ -16,7 +16,8 @@ class Header extends React.Component {
     ];
     return (
       <div className="header">
-        <Link to={'/'} className="logo"><div className="logo-c" style={imgStyle[0]}></div> PiBrain</Link>
+        <Link to={'/'} className="logo"><div className="logo-c" style={imgStyle[0]}></div>
+          <p className="logo-text">PiBrain</p></Link>
       <div className="links-container">
         {/*
       <ReactCSSTransitionGroup transitionName = "header-fade"

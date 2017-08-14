@@ -59,7 +59,7 @@ class Home extends Component {
         <div className='app-container'>
           <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
           <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }>
-          <p className="wc-title">Welcome to piBrain</p>
+          <p className="wc-title">Sign up for Aura platform updates!</p>
           <Hero />
           </div>
         </div>
