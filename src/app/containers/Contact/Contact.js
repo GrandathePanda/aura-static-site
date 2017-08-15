@@ -17,21 +17,21 @@ class Contact extends Component {
     var mockBackend = [
       {
         "key": 0,
-        "photo": "../../../assets/itb.jpg",
+        "photo": "../../../assets/ian.jpg",
         "name": "IAN BUTLER",
         "title": "CEO & FOUNDER",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut scelerisque ex. Nam quis viverra mi. Integer vel mauris interdum, dignissim est non, condimentum libero. Maecenas gravida non lectus ac varius. Nulla sagittis sodales ante ac suscipit. Maecenas sodales interdum erat at fermentum. Nunc a sagittis nisi. Proin non diam ultricies, hendrerit tellus quis, facilisis sem. Cras ac tortor velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce tempor diam id tempor lobortis. Nunc tincidunt dolor in orci sollicitudin viverra. Mauris et arcu ornare, pulvinar mi a, auctor lectus. Donec condimentum leo ligula, finibus convallis quam varius quis. Duis vitae efficitur ligula."
       },
       {
         "key": 1,
-        "photo": "../../../assets/itb.jpg",
+        "photo": "../../../assets/cory.jpg",
         "name": "CORY DICKSON",
         "title": "CPO & FOUNDER",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut scelerisque ex. Nam quis viverra mi. Integer vel mauris interdum, dignissim est non, condimentum libero. Maecenas gravida non lectus ac varius. Nulla sagittis sodales ante ac suscipit. Maecenas sodales interdum erat at fermentum. Nunc a sagittis nisi. Proin non diam ultricies, hendrerit tellus quis, facilisis sem. Cras ac tortor velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce tempor diam id tempor lobortis. Nunc tincidunt dolor in orci sollicitudin viverra. Mauris et arcu ornare, pulvinar mi a, auctor lectus. Donec condimentum leo ligula, finibus convallis quam varius quis. Duis vitae efficitur ligula."
       },
       {
         "key": 2,
-        "photo": "../../../assets/wam.jpg",
+        "photo": "../../../assets/watson.jpg",
         "name": "WATSON MARKSON",
         "title": "CTO & FOUNDER",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut scelerisque ex. Nam quis viverra mi. Integer vel mauris interdum, dignissim est non, condimentum libero. Maecenas gravida non lectus ac varius. Nulla sagittis sodales ante ac suscipit. Maecenas sodales interdum erat at fermentum. Nunc a sagittis nisi. Proin non diam ultricies, hendrerit tellus quis, facilisis sem. Cras ac tortor velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce tempor diam id tempor lobortis. Nunc tincidunt dolor in orci sollicitudin viverra. Mauris et arcu ornare, pulvinar mi a, auctor lectus. Donec condimentum leo ligula, finibus convallis quam varius quis. Duis vitae efficitur ligula."
@@ -50,15 +50,16 @@ class Contact extends Component {
         });
       },
       render: function () {
-        var ian = require("../../../assets/itb.jpg");
-        // var cory = require("../../../assets/");
-        var watson = require("../../../assets/wam.jpg");
+        var ian = require("../../../assets/ian.jpg");
+        var cory = require("../../../assets/cory.jpg");
+        var watson = require("../../../assets/watson.jpg");
         var divStyles= [
           {
             backgroundImage: 'url(' + ian + ')',
           },
           {
-            backgroundImage: 'url(' + ian + ')',
+            backgroundImage: 'url(' + cory + ')',
+            backgroundPosition: '35%',
           },
           {
             backgroundImage: 'url(' + watson + ')',

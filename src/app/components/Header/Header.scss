@@ -66,6 +66,14 @@ a {
   }
 }
 
+.main-fade-appear {
+  opacity: 0.01;
+}
+
+.main-fade-appear.main-fade-appear-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
 .header-fade-appear {
   opacity: 0.01;
 }
