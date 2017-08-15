@@ -28,10 +28,67 @@ class Home extends Component {
   render(props) {
     return (
       <div>
-        <div className='app-container'>
+        <Particles className="particle-canvas" width={'100%'} height={'100%'} params={{
+        particles: {
+          number: {
+            value: 200,
+            enable: true,
+            value_area:800
+          },
+          color: {
+            value: '#000000'
+          },
+          opacity: {
+              value: 1
+          },
+          shape: {
+            polygon: {
+              nb_sides: 12
+            }
+          },
+          line_linked: {
+            enable: true,
+            color: "#000000",
+          },
+          move: {
+            enable: true,
+            speed: 1.3
+          }
+        }
+      }} />
+    <div className='app-container'>
+      <Particles className="particle-canvas" width={'100%'} height={'125vh'} params={{
+        particles: {
+          number: {
+            value: 125,
+            enable: true,
+            value_area:800
+          },
+          color: {
+            value: '#000000'
+          },
+          opacity: {
+              value: 1
+          },
+          shape: {
+            polygon: {
+              nb_sides: 12
+            }
+          },
+          line_linked: {
+            enable: true,
+            color: "#000000",
+          },
+          move: {
+            enable: true,
+            speed: 1.3
+          }
+        }
+      }} />
+          
           <SidebarMenu handleLogin={this.handleLogin} active={this.props.sidebar_active} />
           <div className={this.props.sidebar_active ? 'aura-container pushed' : 'aura-container' }>
-          <p className="wc-title">Welcome to piBrain</p>
+          <p className="wc-title">Sign up for Aura platform updates!</p>
           <Hero />
           </div>
         </div>

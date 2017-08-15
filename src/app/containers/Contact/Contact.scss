@@ -1,6 +1,7 @@
 #contact {
   margin: 0 auto;
   height: 100%;
+  margin-top: 150px;
   position: relative;
   canvas {
     position: absolute;
@@ -31,7 +32,9 @@
         .expand-c {
           height: 100%;
           width: 0px;
+          width: 100%;
           opacity: 0;
+          transform: rotate(-90deg);
           background: white;
           z-index: 1000;
           transition: all 0.5s cubic-bezier(.36,.33,.18,.95);
@@ -61,8 +64,8 @@
           span { width: 100%; float: left; }
 
           .name {
-              color: #555;
-              font: 1.65em 'Oxygen', monospace;
+            color: #555;
+            font: 1.65em 'Oxygen', monospace;
           }
 
           .title {
@@ -80,7 +83,10 @@
           cursor:pointer;
           transition: all 0.5s cubic-bezier(.36,.33,.18,.95);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+          filter: grayscale(100%);
+          transform: rotate(90deg);
         }
+
       }
     }
   }

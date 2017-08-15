@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './Hero.scss';
 import ConnectedNewsletterForm from './NewsletterForm/ConnectedNewsletterForm.jsx';
 import CSSModules from 'react-css-modules';
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Hero extends Component {
 
@@ -12,6 +12,9 @@ class Hero extends Component {
 
 render(props) {
     return (
+      <ReactCSSTransitionGroup transitionName = "hero-fade"
+      transitionAppear = {true} transitionAppearTimeout = {250}
+      transitionEnter = {false} transitionLeave = {false}>
       <div id="hero">
       <div className="center-container">
         <p className="hero-text">
@@ -23,6 +26,7 @@ render(props) {
       </div>
       </div>
     </div>
+  </ReactCSSTransitionGroup>
   );
 }
 }

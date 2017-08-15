@@ -47,7 +47,14 @@ var config = {
 						'file?hash=sha512&digest=hex&name=[hash].[ext]',
 						'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
 					]
-			}
+			},
+			{
+  				test: /\.(ttf|eot|woff|woff2)$/,
+  				loader: 'file-loader',
+  				options: {
+    				name: 'fonts/[name].[ext]',
+  			},
+		}
 		],
 		rules: [{
 			test: /\.scss$/,
