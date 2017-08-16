@@ -4,9 +4,13 @@ import { graphql, compose } from 'react-apollo'
 
 import { bindActionCreators } from 'redux'
 
+import { actions } from 'react-redux-form'
+
 import gql from 'graphql-tag'
 
 import NewsletterForm from './NewsletterForm'
+
+import { displaySubmitMessage } from '../../../actions.js'
 
 const signUp = gql`
   mutation($firstName: String!, $lastName: String!,  $email: String!, $url: String!, $organization: String) {
@@ -36,11 +40,17 @@ const newsletterSignUp = graphql(signUp, {
   }),
 })
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({ submitMessage: state.newsletterState.displaySubmitMessage })
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
-    { },
+    {
+      setSubmitted: actions.setSubmitted,
+      setSubmitFailed: actions.setSubmitFailed,
+      setPending: actions.setPending,
+      reset: actions.reset,
+      displaySubmitMessage
+    },
     dispatch
   )
 }

@@ -14,6 +14,7 @@ const isEmail = (value) => {
 const isRequired = (value) => ( value.length > 0 ? true : false )
 
 const isLongEnough = (minLength, value) => {
+  if(value.length == 0) { return true }
   return value.length >= minLength ? true : false
 }
 
@@ -40,16 +41,17 @@ const newsletterFields = [
     uniqueName: 'newsletter-input-lastname', },
   { errorAttribs: {
       email: "Please check that this is a valid email.",
-      length: "Minium length is 11.",
+      length: "Minium length is 5.",
       required: "Your email is a required field.",
     },
     fieldAttribs: {
       model: 'newsletter.email',
       placeholder: 'Email',
-      validators: { required: isRequired, email: isEmail, length: isLongEnough.bind(null, 11) },
+      validators: { required: isRequired, email: isEmail, length: isLongEnough.bind(null, 5) },
     },
     uniqueName: 'newsletter-input-email', },
   { errorAttribs: {
+      length: "Minimum length is 2."
     },
     fieldAttribs: {
       model: 'newsletter.organization',
@@ -68,13 +70,17 @@ class NewsletterForm extends Component {
   }
 
   async handleSubmit( newsletter, values ) {
+    this.props.setPending('newsletter', true)
     try {
       const params = { ...values, url: `${window.location.href.match(/^.*\//)[0]}signups` }
       const res = await newsletter.newsletterSignUp(params)
-      return res
+      this.props.setSubmitted('newsletter', true)
+      this.props.reset('newsletter')
+      this.props.displaySubmitMessage(res.data.newsletterSignUp)
     } catch(e) {
       console.error(e)
-      return e.message
+      this.props.setSubmitFailed('newsletter')
+      this.props.displaySubmitMessage({err: true, response: 'Whoops! Something went wrong.'})
     }
   }
 
@@ -97,9 +103,21 @@ class NewsletterForm extends Component {
     })
   }
 
+  messageDisplay(message) {
+    return (
+      <div className='newsletter-display'>
+        <span className='newsletterSubmitResponse'>{message}</span>
+      </div>
+    )
+  }
+
 
   render(props) {
     let newsletter = this.props;
+    if(this.props.submitMessage) {
+      return this.messageDisplay(this.props.submitMessage)
+    }
+
     return (
       <Form model="newsletter" className="newsletter-form" onSubmit={(values) => this.handleSubmit(newsletter, values)}>
           {this.inputFields()}

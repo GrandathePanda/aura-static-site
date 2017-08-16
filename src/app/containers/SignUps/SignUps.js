@@ -35,7 +35,6 @@ class SignUps extends Component {
     const paramObject = new URLSearchParams(this.props.location.search)
     const params  = {}
     for(let x of paramObject.keys()) {
-      console.log(x)
       params[x] = paramObject.get(x)
     }
     return params
@@ -59,7 +58,6 @@ class SignUps extends Component {
         res = await this.props.verifyNewsletterSignUp(params)
       }
       res = res.data.verifyNewsletterEmail
-      console.log(res)
       this.setState({loading: false, res})
     } catch(e) {
       console.error(e)
