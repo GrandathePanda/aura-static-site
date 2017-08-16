@@ -10,7 +10,8 @@ import {
 import { newsletterFormReducer, newsletterModelReducer } from './reducer/newsletterFormReducer'
 import thunk from 'redux-thunk';
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
-import { apiUrl } from 'configVars'
+import getConfigs from '../../config'
+const { apiUrl } = getConfigs()
 const networkInterface = createNetworkInterface({ uri: `${apiUrl}/graphql` })
 const apolloClient = new ApolloClient({
   networkInterface

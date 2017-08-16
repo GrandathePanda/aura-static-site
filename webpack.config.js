@@ -7,9 +7,6 @@ var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
 	entry: APP_DIR + '/index.js',
-  externals: {
-    configVars
-  },
 	output: {
 		path: BUILD_DIR,
 		filename: 'bundle.js'

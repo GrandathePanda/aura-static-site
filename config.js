@@ -12,4 +12,4 @@ const configs = {
 
 const NODE_ENV = process.env.NODE_ENV || 'local'
 
-module.exports = () => (configs[NODE_ENV])
+module.exports = function () { return (configs[NODE_ENV]); }
