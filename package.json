@@ -62,7 +62,7 @@
   "scripts": {
     "start": "webpack-dev-server -d --inline --hot --colors --progress",
     "build": "react-scripts build",
-    "deploy-dev": "yarn build && aws s3 sync build s3://pibrain.homepage.dev",
+    "deploy-dev": "NODE_ENV=development yarn build && aws s3 sync build s3://pibrain.homepage.dev",
     "deploy-prod": "NODE_ENV=production yarn build && aws s3 sync build s3://pibrain.io",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
