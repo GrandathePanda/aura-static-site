@@ -19,21 +19,21 @@ export default class Contact extends Component {
         "photo": "../../../assets/ian.jpg",
         "name": "IAN BUTLER",
         "title": "CEO & FOUNDER",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut scelerisque ex. Nam quis viverra mi. Integer vel mauris interdum, dignissim est non, condimentum libero. Maecenas gravida non lectus ac varius. Nulla sagittis sodales ante ac suscipit. Maecenas sodales interdum erat at fermentum. Nunc a sagittis nisi. Proin non diam ultricies, hendrerit tellus quis, facilisis sem. Cras ac tortor velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce tempor diam id tempor lobortis. Nunc tincidunt dolor in orci sollicitudin viverra. Mauris et arcu ornare, pulvinar mi a, auctor lectus. Donec condimentum leo ligula, finibus convallis quam varius quis. Duis vitae efficitur ligula."
+        "description": "After not finding what he was looking for in his home town or in college at NYU Ian was a bit lost. Always flirting with entrepreneurship Ian submitted one of his ideas to an accelerator to see what would happen. He made it to the final rounds and that sparked something in him. Fast forward a little while later Ian met with his two co-founders and piBrain and Aura were born."
       },
       {
         "key": 1,
         "photo": "../../../assets/cory.jpg",
         "name": "CORY DICKSON",
         "title": "CPO & FOUNDER",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut scelerisque ex. Nam quis viverra mi. Integer vel mauris interdum, dignissim est non, condimentum libero. Maecenas gravida non lectus ac varius. Nulla sagittis sodales ante ac suscipit. Maecenas sodales interdum erat at fermentum. Nunc a sagittis nisi. Proin non diam ultricies, hendrerit tellus quis, facilisis sem. Cras ac tortor velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce tempor diam id tempor lobortis. Nunc tincidunt dolor in orci sollicitudin viverra. Mauris et arcu ornare, pulvinar mi a, auctor lectus. Donec condimentum leo ligula, finibus convallis quam varius quis. Duis vitae efficitur ligula."
+        "description": "Starting as a Web Developer at Pentagram Design, Cory launched his career as a front-end developer. Wanting to do more with his new found design skills, he decided that he was ready to build a product in an emerging field such as AI."
       },
       {
         "key": 2,
         "photo": "../../../assets/watson.jpg",
         "name": "WATSON MARKSON",
         "title": "CTO & FOUNDER",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut scelerisque ex. Nam quis viverra mi. Integer vel mauris interdum, dignissim est non, condimentum libero. Maecenas gravida non lectus ac varius. Nulla sagittis sodales ante ac suscipit. Maecenas sodales interdum erat at fermentum. Nunc a sagittis nisi. Proin non diam ultricies, hendrerit tellus quis, facilisis sem. Cras ac tortor velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce tempor diam id tempor lobortis. Nunc tincidunt dolor in orci sollicitudin viverra. Mauris et arcu ornare, pulvinar mi a, auctor lectus. Donec condimentum leo ligula, finibus convallis quam varius quis. Duis vitae efficitur ligula."
+        "description": "Before co-founding piBriain, Watson was studying Mathematics at NYU's Polytechnic Institute, pursuing a lifelong passion for abstraction. After the various dramatic deep learning expositions of 2014/15, Watson was enticed away from further academic studies to explore the exciting space of applications made accessible through modern machine learning techniques."
       }
     ];
 

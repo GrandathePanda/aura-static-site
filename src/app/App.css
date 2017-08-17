@@ -3,7 +3,8 @@
   top: 48px;
   max-width: 1500px;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background: transparent !important; }
 
 .aura-container {
   position: relative;
@@ -11,7 +12,8 @@
   transition: transform 600ms;
   transition-timing-function: cubic-bezier(0.56, 0.97, 0.94, 0.99);
   overflow: hidden;
-  width: 100%; }
+  width: 100%;
+  background: transparent !important; }
   .aura-container.pushed {
     transform: translateX(30vw); }
 
