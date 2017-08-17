@@ -1,14 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import styles from './SidebarMenu.scss';
+import './SidebarMenu.css';
 import Profile from '../Profile/Profile.jsx';
 import Login from '../Login/Login.jsx';
 import SignUp from '../SignUp/SignUp.jsx';
 import SideHeader from '../SideHeader/SideHeader.jsx';
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
-import CSSModules from 'react-css-modules';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-class SidebarMenu extends Component {
+export default class SidebarMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,4 +56,3 @@ class SidebarMenu extends Component {
     );
   }
 }
-export default CSSModules(SidebarMenu, styles);

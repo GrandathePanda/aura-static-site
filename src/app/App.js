@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header.jsx';
 import SidebarMenu from './components/SidebarMenu/SidebarMenu.jsx';
-import styles from './App.scss';
-import CSSModules from 'react-css-modules';
+import './App.css';
 import { Provider } from 'react-redux';
 import { apolloClient, store } from './store.js';
 import Home from './containers/Home/Home.js';
@@ -10,7 +9,7 @@ import ConnectedSignUps from './containers/SignUps/ConnectedSignUps.js';
 import { Switch, Route } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 
-class App extends Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
@@ -53,4 +52,3 @@ class App extends Component {
 //<div className={this.state.sidebar_active ? 'aura-container pushed' : 'aura-container' }><p>Welcome to Aura</p></div>
       //todo
 //</div>
-export default CSSModules( App, styles )

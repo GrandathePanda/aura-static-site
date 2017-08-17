@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import styles from './NewsletterForm.scss';
-import CSSModules from 'react-css-modules';
+import './NewsletterForm.css';
 import { connect } from 'react-redux';
 import { Errors, Field, Form, Control, actions } from 'react-redux-form';
 import InputField from '../../InputField/InputField.jsx';
@@ -63,7 +62,7 @@ const newsletterFields = [
 
 
 
-class NewsletterForm extends Component {
+export default class NewsletterForm extends Component {
 
   constructor(props) {
     super(props);
@@ -126,6 +125,3 @@ class NewsletterForm extends Component {
     );
   }
 }
-
-CSSModules( NewsletterForm, styles );
-export default NewsletterForm;

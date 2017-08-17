@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
-import styles from './Contact.scss';
-import CSSModules from 'react-css-modules';
+import './Contact.css';
 import Particles from 'react-particles-js';
 
-class Contact extends Component {
+export default class Contact extends Component {
 
   constructor(props) {
     super(props);
@@ -128,4 +127,3 @@ class Contact extends Component {
   }
 }
 
-export default CSSModules( Contact, styles )

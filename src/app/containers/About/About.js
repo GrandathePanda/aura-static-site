@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import styles from './About.scss';
-import CSSModules from 'react-css-modules';
+import './About.css';
 import Particles from 'react-particles-js';
 
-class About extends Component {
+export default class About extends Component {
 
   constructor(props) {
     super(props);
@@ -65,4 +64,3 @@ class About extends Component {
   }
 }
 
-export default CSSModules(About, styles)
