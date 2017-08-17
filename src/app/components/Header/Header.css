@@ -15,7 +15,7 @@ a {
   z-index: 1000;
   height: 64px;
   width: 100%;
-  background: #151514;
+  background: #151514 !important;
   box-shadow: -9px -15px 12px 14px black; }
   .header .logo {
     position: relative;
