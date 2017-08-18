@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import GridLoader from 'halogen/gridloader'
-import CSSModules from 'react-css-modules';
-import styles from './SignUps.scss'
+import GridLoader from 'halogen/GridLoader'
+import './SignUps.css'
 
-class SignUps extends Component {
+export default class SignUps extends Component {
   constructor(props) {
     super(props)
     this.displayServerMessage = this.displayServerMessage.bind(this)
@@ -35,7 +34,6 @@ class SignUps extends Component {
     const paramObject = new URLSearchParams(this.props.location.search)
     const params  = {}
     for(let x of paramObject.keys()) {
-      console.log(x)
       params[x] = paramObject.get(x)
     }
     return params
@@ -59,7 +57,6 @@ class SignUps extends Component {
         res = await this.props.verifyNewsletterSignUp(params)
       }
       res = res.data.verifyNewsletterEmail
-      console.log(res)
       this.setState({loading: false, res})
     } catch(e) {
       console.error(e)
@@ -80,4 +77,3 @@ class SignUps extends Component {
   }
 }
 
-export default CSSModules(SignUps, styles)

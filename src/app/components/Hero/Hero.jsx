@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import styles from './Hero.scss';
+import './Hero.css';
 import ConnectedNewsletterForm from './NewsletterForm/ConnectedNewsletterForm.jsx';
-import CSSModules from 'react-css-modules';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-class Hero extends Component {
+export default class Hero extends Component {
 
   constructor(props) {
     super(props);
@@ -31,4 +30,3 @@ render(props) {
 }
 }
 
-export default CSSModules( Hero, styles )

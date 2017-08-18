@@ -8,35 +8,31 @@ input, button {
   -webkit-transition: 0.5s;
   font: 12px 'PT Mono', monospace;
   transition: 0.5s;
-  outline: none;
-}
+  outline: none; }
 
 button[type=submit] {
-  background:#74b1e6;
+  background: #74b1e6;
   border: none;
-  cursor:pointer;
-}
+  cursor: pointer; }
 
 button[type=submit]:hover {
   background: #222;
-  color: white;
-}
+  color: white; }
 
 input[type=email]:focus, input[type=password]:focus, input[type=text]:focus {
-  border: 3px solid #555;
-}
+  border: 3px solid #555; }
+
 .newsletter-form {
   overflow: hidden;
   width: 100%;
-  margin: 50px 0 auto; position: relative;
-  left: 25%;
-}
+  margin: 50px 0 auto;
+  position: relative;
+  left: 25%; }
 
 .newsletter-display {
   overflow: hidden;
   width: 100%;
-  margin: 50px 0 auto;
-}
+  margin: 50px 0 auto; }
 
 .newsletterSubmitResponse {
   width: 50%;
@@ -54,5 +50,5 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus {
   margin-top: 50px;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);ext-align: center;
-}
+  transform: translateX(-50%) translateY(-50%);
+  ext-align: center; }

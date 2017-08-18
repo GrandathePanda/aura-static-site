@@ -6,7 +6,6 @@ import App from './app/App.js';
 import { Provider } from 'react-redux';
 
 const history = createBrowserHistory()
-
 ReactDOM.render(
   <Router history={history}>
     <App />

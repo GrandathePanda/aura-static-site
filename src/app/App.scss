@@ -4,6 +4,7 @@
   max-width: 1500px;
 	width: 100%;
   margin: 0 auto;
+  background: transparent !important;
 }
 
 .aura-container {
@@ -13,6 +14,7 @@
 	transition-timing-function: cubic-bezier(.56,.97,.94,.99);
   overflow:hidden;
   width: 100%;
+  background: transparent !important;
 
 	&.pushed {
 		 transform: translateX(30vw);

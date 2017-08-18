@@ -22,7 +22,7 @@ a {
   z-index: 1000;
   height: 64px;
   width: 100%;
-  background: rgb(21,21,20);
+  background: rgb(21,21,20) !important;
   box-shadow:-9px -15px 12px 14px black;
   .logo {
     position: relative;

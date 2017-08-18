@@ -5,11 +5,10 @@ import Contact from '../../containers/Contact/Contact.js'
 import Hero from '../../components/Hero/Hero.jsx';
 import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
 import Chatbox from '../../components/Chatbox/Chatbox.jsx';
-import styles from './Home.scss';
-import CSSModules from 'react-css-modules';
+import './Home.css';
 import Particles from 'react-particles-js';
 
-class Home extends Component {
+export default class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -99,4 +98,3 @@ class Home extends Component {
   }
 }
 
-export default CSSModules( Home, styles )
