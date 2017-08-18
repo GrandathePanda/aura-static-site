@@ -3,7 +3,7 @@ const configs = {
     apiUrl: 'http://localhost:4200',
   },
   development: {
-    apiUrl: 'a broken url for now',
+    apiUrl: 'https://p3hr3zqnwc.execute-api.us-east-1.amazonaws.com/dev',
   },
   production: {
     apiUrl: 'https://p3hr3zqnwc.execute-api.us-east-1.amazonaws.com/prod',
