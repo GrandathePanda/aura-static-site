@@ -6,7 +6,7 @@ const configs = {
     apiUrl: 'a broken url for now',
   },
   production: {
-    apiUrl: 'https://2dusz11q81.execute-api.us-east-1.amazonaws.com/prod',
+    apiUrl: 'https://p3hr3zqnwc.execute-api.us-east-1.amazonaws.com/prod',
   },
 }
 
