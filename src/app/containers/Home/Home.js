@@ -7,13 +7,34 @@ import SidebarMenu from '../../components/SidebarMenu/SidebarMenu.jsx';
 import Chatbox from '../../components/Chatbox/Chatbox.jsx';
 import './Home.css';
 import Particles from 'react-particles-js';
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
 
 export default class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      isMobile: isMobile.any()
     };
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -91,8 +112,13 @@ export default class Home extends Component {
           <Hero />
           </div>
         </div>
+
+        if ( this.state.isMobile == false ) {
+        <div>
         <About />
         <Contact />
+        </div>
+      }
       </div>
     );
   }
